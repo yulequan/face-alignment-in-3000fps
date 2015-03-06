@@ -19,7 +19,12 @@ inline double calculate_var(const vector<double>& v_1 ){
     return mean_2 - mean_1*mean_1;
     
 }
-
+inline double calculate_var(const Mat_<double>& v1){
+    double mean_1 = mean(v1)[0];
+    double mean_2 = mean(v1.mul(v1))[0];
+    return mean_2 - mean_1*mean_1;
+    
+}
 
 void Tree::Train(const vector<Mat_<uchar> >& images,
                  const vector<Mat_<double> >& ground_truth_shapes,
@@ -220,13 +225,12 @@ void Tree::Splitnode(const vector<Mat_<uchar> >& images,
     rc1.reserve(ind_samples.size());
     lc2.reserve(ind_samples.size());
     rc2.reserve(ind_samples.size());
-    
-    double E_x_2 = mean(shapes_residual.mul(shapes_residual))[0];
-    double E_x = mean(shapes_residual)[0];
-    double E_y_2 = mean(shapes_residual.mul(shapes_residual))[1];
-    double E_y = mean(shapes_residual)[1];
-    double var_overall = ind_samples.size()*((E_x_2 - E_x*E_x) + (E_y_2 - E_y*E_y));
-   
+//    double E_x_2 = mean(shapes_residual.col(0).mul(shapes_residual.col(0)))[0];
+//    double E_x = mean(shapes_residual.col(0))[0];
+//    double E_y_2 = mean(shapes_residual.col(1).mul(shapes_residual.col(1)))[0];
+//    double E_y = mean(shapes_residual.col(1))[0];
+//    double var_overall = ind_samples.size()*((E_x_2 - E_x*E_x) + (E_y_2 - E_y*E_y));
+    double var_overall =(calculate_var(shapes_residual.col(0))+calculate_var(shapes_residual.col(1))) * ind_samples.size();
     double max_var_reductions = 0;
     double threshold = 0;
     double var_lc = 0;
@@ -252,7 +256,7 @@ void Tree::Splitnode(const vector<Mat_<uchar> >& images,
         var_lc = (calculate_var(lc1)+calculate_var(lc2)) * lc1.size();
         var_rc = (calculate_var(rc1)+calculate_var(rc2)) * rc1.size();
         var_reduce = var_overall - var_lc - var_rc;
-//        cout << var_reduce<<endl;
+//       cout << var_reduce<<endl;
         if (var_reduce > max_var_reductions){
             max_var_reductions = var_reduce;
             thresh = threshold;
@@ -265,7 +269,7 @@ void Tree::Splitnode(const vector<Mat_<uchar> >& images,
     feat[1] =candidate_pixel_locations(max_id,1)/max_radio_radius_;
     feat[2] =candidate_pixel_locations(max_id,2)/max_radio_radius_;
     feat[3] =candidate_pixel_locations(max_id,3)/max_radio_radius_;
-//    cout << max_id<<endl;
+//    cout << max_id<< " "<<max_var_reductions <<endl;
 //    cout << feat[0] << " "<<feat[1] <<" "<< feat[2]<<" "<< feat[3]<<endl;
     lcind.clear();
     rcind.clear();

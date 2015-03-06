@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/lequan/workspace/xcode/myopencv/src/Demo.cpp
+FaceAlignment.h
+/Users/lequan/workspace/xcode/myopencv/src/FaceAlignment.h
+
 /Users/lequan/workspace/xcode/myopencv/src/FaceAlignment.h
 iostream
 -
@@ -38,11 +42,21 @@ numeric
 utility
 -
 
+/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp
+LBFRegressor.h
+/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.h
+
 /Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.h
 RandomForest.h
 /Users/lequan/workspace/xcode/myopencv/src/RandomForest.h
 liblinear/linear.h
 /Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.h
+
+/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp
+RandomForest.h
+/Users/lequan/workspace/xcode/myopencv/src/RandomForest.h
+RandomForest.h
+/Users/lequan/workspace/xcode/myopencv/src/RandomForest.h
 
 /Users/lequan/workspace/xcode/myopencv/src/RandomForest.h
 Tree.h
@@ -52,9 +66,23 @@ Tree.h
 LBFRegressor.h
 /Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.h
 
+/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp
+LBFRegressor.h
+/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.h
+
+/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp
+Tree.h
+/Users/lequan/workspace/xcode/myopencv/src/Tree.h
+
 /Users/lequan/workspace/xcode/myopencv/src/Tree.h
 FaceAlignment.h
 /Users/lequan/workspace/xcode/myopencv/src/FaceAlignment.h
+
+/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp
+FaceAlignment.h
+/Users/lequan/workspace/xcode/myopencv/src/FaceAlignment.h
+LBFRegressor.h
+/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.h
 
 /Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.h
 

@@ -258,7 +258,6 @@ void LBFRegressor::Train(const vector<Mat_<uchar> >& images,
     
     // get mean shape from training shapes(only origin train images)
     mean_shape_ = GetMeanShape(ground_truth_shapes,bounding_boxs);
-    cout << mean_shape_<<endl;
     // train random forest
     int num_feature = global_params.landmark_num * global_params.max_numtrees * pow(2,(global_params.max_depth-1));
     int num_train_sample = (int)augmented_images.size();

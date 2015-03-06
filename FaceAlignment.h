@@ -48,16 +48,16 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 struct Params{
     
     double bagging_overlap = 0.4;
-    int max_numtrees = 20;
-    int max_depth = 3;
-    int max_numthreshs = 50;
+    int max_numtrees = 10;
+    int max_depth = 5;
     int landmark_num = 29;// to be decided
     int initial_num = 10;
     
     int max_numstage = 4;
-    double max_radio_radius[10] = {0.4,0.3,0.2,0.15, 0.1, 0.1, 0.1, 0.1, 0.08,0.08};
-    int max_numfeats[8] = {5,5,5,5,5,5,4,4}; // number of pixel pairs
-    
+    double max_radio_radius[10] = {0.4,0.3,0.2,0.15, 0.12, 0.10, 0.08, 0.06, 0.06,0.05};
+//    int max_numfeats[8] = {1000,1000, 1000, 500, 500, 500, 400, 400}; // number of pixel pairs
+    int max_numfeats[8] = {200,200, 200, 100, 100, 100, 80, 80}; // number of pixel pairs
+    int max_numthreshs = 50;
 };
 static Params global_params;
 class BoundingBox{

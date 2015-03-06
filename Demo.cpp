@@ -28,7 +28,7 @@ void InitializeGlobalParam(){
 int main( int argc, char** argv){
 //    InitializeGlobalParam();
     if (argc < 2) {
-        TestDemo();
+        TrainDemo();
     }
     else if (strcmp(argv[1], "Train") == 0){
         TrainDemo();
