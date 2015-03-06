@@ -46,10 +46,8 @@ struct feature_node ** LBFRegressor::DeriveBinaryFeat(
         SimilarityTransform(ProjectShape(current_shapes[i],bounding_boxs[i]),mean_shape,rotation,scale);
         for (int j =0; j <randf.num_landmark_; j++){
             for(int k = 0; k< randf.max_numtrees_;k++){
-                //
-//                cout << current_shapes[i][1]<<endl;
+
                 bincode = GetCodefromTree(randf.rfs_[j][k],images[i],current_shapes[i],bounding_boxs[i],rotation,scale);
-//                cout << bincode<<endl;
                 ind = j * randf.max_numtrees_ + k;
                 binfeatures[i][ind].index = leafnode_per_tree * ind + bincode;
                 binfeatures[i][ind].value = 1;
@@ -91,10 +89,7 @@ int  LBFRegressor::GetCodefromTree(const Tree& tree,
         int real_y2 = project_y2 + shape(tree.landmarkID_,1);
         real_x2 = max(0.0,min((double)real_x2,image.cols-1.0));
         real_y2 = max(0.0,min((double)real_y2,image.rows-1.0));
-//        cout <<shape(tree.landmarkID_,0) <<" "<<shape(tree.landmarkID_,1)<<endl;
         double pdf = ((int)(image(real_y1,real_x1))-(int)(image(real_y2,real_x2)));
-//        cout << y1<< " "<<y2 <<" "<<x1<<" "<<x2<<endl;
-//        cout << real_y1<< " "<<real_y2 <<" "<<real_x1<<" "<<real_x2<<endl;
         if (pdf < tree.nodes_[currnode].thresh){
             currnode =tree.nodes_[currnode].cnodes[0];
         }
@@ -227,9 +222,9 @@ void LBFRegressor::GlobalPrediction(struct feature_node** binfeatures,
     }
 }
 
-void LBFRegressor::Train(vector<Mat_<uchar> >& images,
-                         vector<Mat_<double> >& ground_truth_shapes,
-                         vector<BoundingBox> & bounding_boxs){
+void LBFRegressor::Train(const vector<Mat_<uchar> >& images,
+                         const vector<Mat_<double> >& ground_truth_shapes,
+                         const vector<BoundingBox> & bounding_boxs){
     
     // data augmentation and multiple initialization
     vector<Mat_<uchar> > augmented_images;
@@ -260,7 +255,7 @@ void LBFRegressor::Train(vector<Mat_<uchar> >& images,
     
     // get mean shape from training shapes(only origin train images)
     mean_shape_ = GetMeanShape(ground_truth_shapes,bounding_boxs);
-   
+    cout << mean_shape_<<endl;
     // train random forest
     int num_feature = global_params.landmark_num * global_params.max_numtrees * pow(2,(global_params.max_depth-1));
     int num_train_sample = (int)augmented_images.size();
@@ -301,14 +296,15 @@ Mat_<double>  LBFRegressor::Predict(const cv::Mat_<uchar>& image,
     
     images.push_back(image);
     bounding_boxs.push_back(bounding_box);
-    cout << "mean_shape_"<<endl;
-    cout << mean_shape_<<endl;
     Mat_<double> current_shape = ReProjectShape(mean_shape_, bounding_box);
     current_shapes.push_back(current_shape);
-   
     int num_train_sample = (int)images.size();
-    cout <<"initialize shape"<<endl;
-    cout << current_shapes[0]<<endl;
+    
+//    cout << "mean_shape_"<<endl;
+//    cout << mean_shape_<<endl;
+//    cout <<"initialize shape"<<endl;
+//    cout << current_shapes[0]<<endl;
+//    
     for ( int stage = 0; stage < global_params.max_numstage; stage++){
         cout << "derive binary codes given learned random forest in " << stage << "th stage"<< endl;
         struct feature_node ** binfeatures ;
@@ -316,8 +312,8 @@ Mat_<double>  LBFRegressor::Predict(const cv::Mat_<uchar>& image,
         
         cout << "learn increment of current stage"<<endl;
         GlobalPrediction(binfeatures, Models_[stage], current_shapes,bounding_boxs,num_train_sample,stage);
-        cout <<"....."<<endl;
-        cout << current_shapes[0]<<endl;
+//        cout <<"....."<<endl;
+//        cout << current_shapes[0]<<endl;
     }
     return current_shapes[0];
 }

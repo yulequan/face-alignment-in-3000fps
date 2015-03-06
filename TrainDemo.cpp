@@ -65,7 +65,7 @@ void TrainDemo(){
         }
         ground_truth_shapes.push_back(temp);
     }
-
+   
     fin.close(); 
     
     LBFRegressor regressor;

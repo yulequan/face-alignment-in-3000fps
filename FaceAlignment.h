@@ -51,16 +51,15 @@ struct Params{
     int max_numtrees = 5;
     int max_depth = 2;
     int max_numthreshs = 100;
-    int landmark_num = 19;// to be decided
+    int landmark_num = 29;// to be decided
     int initial_num = 5;
     
     int max_numstage = 3;
     double max_radio_radius[10] = {0.4,0.3,0.2,0.15, 0.1, 0.1, 0.1, 0.1, 0.08,0.08};
     int max_numfeats[8] = {5,5,5,5,5,5,4,4};
-
+    
 };
 static Params global_params;
-
 class BoundingBox{
     public:
         double start_x;

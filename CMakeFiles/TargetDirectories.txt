@@ -1,0 +1,1 @@
+/Users/lequan/workspace/xcode/myopencv/src/CMakeFiles/Demo.out.dir

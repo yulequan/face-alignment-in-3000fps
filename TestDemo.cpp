@@ -71,15 +71,15 @@ void TestDemo (){
         circle(test_image_1,Point2d(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height),3,Scalar(0,255,0),-1,8,0);
         circle(test_image_1,Point2d(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height),3,Scalar(0,255,0),-1,8,0);
         
-        // draw initialize shape
+        // draw initialize shape ::blue
         Mat_<double>initializeshape = ReProjectShape(regressor.mean_shape_, test_bounding_boxs[index]);
         for(int i = 0;i < landmark_num;i++){
-            circle(test_image_1,Point2d(initializeshape(i,0),regressor.mean_shape_(i,1)),1,Scalar(255,0,0),-1,8,0);
+            circle(test_image_1,Point2d(initializeshape(i,0),initializeshape(i,1)),1,Scalar(255,0,0),-1,8,0);
         }
-//        cout <<"Initialize shape"<<endl;
-//        cout << regressor.mean_shape_<<endl;
+        cout <<"Initialize shape"<<endl;
+        cout <<initializeshape <<endl;
        
-        // draw result
+        // draw result :: red
         for(int i = 0;i < landmark_num;i++){
             circle(test_image_1,Point2d(current_shape(i,0),current_shape(i,1)),1,Scalar(0,0,255),-1,8,0);
         }
