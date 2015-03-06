@@ -246,8 +246,8 @@ void Tree::Splitnode(const vector<Mat_<uchar> >& images,
                 lc2.push_back(shapes_residual(j,1));
             }
             else{
-                lc1.push_back(shapes_residual(j,0));
-                lc2.push_back(shapes_residual(j,1));            }
+                rc1.push_back(shapes_residual(j,0));
+                rc2.push_back(shapes_residual(j,1));            }
         }
         var_lc = (calculate_var(lc1)+calculate_var(lc2)) * lc1.size();
         var_rc = (calculate_var(rc1)+calculate_var(rc2)) * rc1.size();
@@ -271,10 +271,10 @@ void Tree::Splitnode(const vector<Mat_<uchar> >& images,
     rcind.clear();
     for (int j=0;j < ind_samples.size();j++){
         if (densities(max_id,j) < threshold){
-            lcind.push_back(j);
+            lcind.push_back(ind_samples[j]);
         }
         else{
-            rcind.push_back(j);
+            rcind.push_back(ind_samples[j]);
         }
     }
 }

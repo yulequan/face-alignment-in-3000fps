@@ -56,7 +56,7 @@ struct Params{
     
     int max_numstage = 4;
     double max_radio_radius[10] = {0.4,0.3,0.2,0.15, 0.1, 0.1, 0.1, 0.1, 0.08,0.08};
-    int max_numfeats[8] = {5,5,5,5,5,5,4,4};
+    int max_numfeats[8] = {5,5,5,5,5,5,4,4}; // number of pixel pairs
     
 };
 static Params global_params;
