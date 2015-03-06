@@ -32,6 +32,7 @@ using namespace cv;
 void TestDemo (){
     vector<Mat_<uchar> > test_images;
     vector<BoundingBox> test_bounding_boxs;
+    vector<Mat_<double> >test_ground_truth_shapes;
     int test_img_num = 507;
     int initial_number = 20;
     int landmark_num = 29;
@@ -52,41 +53,56 @@ void TestDemo (){
         test_bounding_boxs.push_back(temp);
     }
     fin.close(); 
+    fin.open("/Users/lequan/workspace/xcode/myopencv/COFW_Dataset/keypoints_test.txt");
+    for(int i = 0;i < test_img_num;i++){
+        Mat_<double> temp(global_params.landmark_num,2);
+        for(int j = 0;j < global_params.landmark_num;j++){
+            fin>>temp(j,0);
+        }
+        for(int j = 0;j < global_params.landmark_num;j++){
+            fin>>temp(j,1);
+        }
+        test_ground_truth_shapes.push_back(temp);
+    }
     
+    fin.close();
     LBFRegressor regressor;
     regressor.Load("/Users/lequan/workspace/xcode/myopencv/data/model.txt");
+    int index = 0;
     while(true){
-        int index = 1;
-        cout<<"Input index:"<<endl;
-        cin>>index;
-
+        index++;
+        if (index >500){
+            break;
+        }
+        cout << "Predict "<< index << endl;
         Mat_<double> current_shape = regressor.Predict(test_images[index],test_bounding_boxs[index],initial_number);
-        cout << "Predict end"<<endl;
         Mat test_image_1;
         cvtColor(test_images[index],test_image_1, COLOR_GRAY2BGR);
        
         // draw bounding box
-        circle(test_image_1,Point2d(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y),3,Scalar(0,255,0),-1,8,0);
-        circle(test_image_1,Point2d(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y),3,Scalar(0,255,0),-1,8,0);
-        circle(test_image_1,Point2d(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height),3,Scalar(0,255,0),-1,8,0);
-        circle(test_image_1,Point2d(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height),3,Scalar(0,255,0),-1,8,0);
+        line(test_image_1, Point2d(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y), Point2d(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y), Scalar(0,255,0),1,8,0);
+        line(test_image_1, Point2d(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y), Point2d(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height), Scalar(0,255,0),1,8,0);
+        line(test_image_1, Point2d(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height), Point2d(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height), Scalar(0,255,0),1,8,0);
+        line(test_image_1, Point2d(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height), Point2d(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y), Scalar(0,255,0),1,8,0);
+//        // draw initialize shape ::blue
+//        Mat_<double>initializeshape = ReProjectShape(regressor.mean_shape_, test_bounding_boxs[index]);
+//        for(int i = 0;i < landmark_num;i++){
+//            circle(test_image_1,Point2d(initializeshape(i,0),initializeshape(i,1)),1,Scalar(255,0,0),-1,8,0);
+//        }
         
-        // draw initialize shape ::blue
-        Mat_<double>initializeshape = ReProjectShape(regressor.mean_shape_, test_bounding_boxs[index]);
-        for(int i = 0;i < landmark_num;i++){
-            circle(test_image_1,Point2d(initializeshape(i,0),initializeshape(i,1)),1,Scalar(255,0,0),-1,8,0);
-        }
-        cout <<"Initialize shape"<<endl;
-        cout <<initializeshape <<endl;
-       
+//        // draw ground truth ::yellow
+//        for(int i = 0;i < landmark_num;i++){
+//            circle(test_image_1,Point2d(test_ground_truth_shapes[index](i,0),test_ground_truth_shapes[index](i,1)),1,Scalar(0,255,255),-1,8,0);
+//        }
         // draw result :: red
         for(int i = 0;i < landmark_num;i++){
             circle(test_image_1,Point2d(current_shape(i,0),current_shape(i,1)),1,Scalar(0,0,255),-1,8,0);
         }
-//        cout << "Result shape"<<endl;
-//        cout << current_shape<<endl;
         imshow("result",test_image_1);
-        waitKey(0);
+        int c = waitKey();
+        if (c =='q'){
+            break;
+        }
     }
     return ;
 }

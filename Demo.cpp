@@ -8,9 +8,9 @@ using namespace std;
 using namespace cv;
 void InitializeGlobalParam(){
     global_params.bagging_overlap = 0.4;
-    global_params.max_numtrees = 5;
+    global_params.max_numtrees = 10;
     global_params.max_depth = 2;
-    global_params.max_numthreshs = 100;
+    global_params.max_numthreshs = 50;
     global_params.landmark_num = 29;
     global_params.initial_num = 5;
 
@@ -27,15 +27,14 @@ void InitializeGlobalParam(){
 
 int main( int argc, char** argv){
 //    InitializeGlobalParam();
-//    if (argc < 2) {
-//        cout << "Error" << endl;
-//    }
-//    else if (strcmp(argv[1], "Train") == 0){
-//        TrainDemo();
-//    }
-//    else if (strcmp(argv[2],"Test") == 0){
-//        TestDemo();
-//    }
-     TrainDemo();
+    if (argc < 2) {
+        TestDemo();
+    }
+    else if (strcmp(argv[1], "Train") == 0){
+        TrainDemo();
+    }
+    else if (strcmp(argv[2],"Test") == 0){
+        TestDemo();
+    }
 }
 

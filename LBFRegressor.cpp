@@ -157,11 +157,14 @@ void LBFRegressor::GlobalRegression(struct feature_node **binfeatures,
     models.clear();
     models.resize(num_residual);
     for (int i=0;i < num_residual;i++){
+        clock_t t1 = clock();
         cout << "Train "<< i <<"th landmark"<<endl;
         prob->y = yy[i];
         check_parameter(prob, param);
         struct model* lbfmodel  = train(prob, param);
         models[i] = lbfmodel;
+        double time =double(clock() - t1) / CLOCKS_PER_SEC;
+        cout << "linear regression of one landmark cost "<< time <<"s"<<endl;
     }
     // update the current shape and shapes_residual
     double tmp;
@@ -260,7 +263,7 @@ void LBFRegressor::Train(const vector<Mat_<uchar> >& images,
     int num_feature = global_params.landmark_num * global_params.max_numtrees * pow(2,(global_params.max_depth-1));
     int num_train_sample = (int)augmented_images.size();
     for (int stage = 0; stage < global_params.max_numstage; stage++){
-        
+        clock_t t = clock();
         GetShapeResidual(augmented_ground_truth_shapes,current_shapes,augmented_bounding_boxs,
                          mean_shape_,shapes_residual_);
         cout << "learn random forest for "<< stage <<"th stage" <<endl;
@@ -273,7 +276,8 @@ void LBFRegressor::Train(const vector<Mat_<uchar> >& images,
         cout << "learn global linear regression given binary feature" << endl;
         GlobalRegression(binfeatures, shapes_residual_, current_shapes, augmented_bounding_boxs, mean_shape_, Models_[stage], num_feature, num_train_sample, stage);
         ReleaseFeatureSpace(binfeatures,(int)augmented_images.size());
-       
+        double time = double(clock() - t) / CLOCKS_PER_SEC;
+        cout << "the rf of "<< stage<<" stage has been trained, cost "<<time <<" s"<<endl<<endl;
     }
 }
 void LBFRegressor::ReleaseFeatureSpace(struct feature_node ** binfeatures,
@@ -299,21 +303,10 @@ Mat_<double>  LBFRegressor::Predict(const cv::Mat_<uchar>& image,
     Mat_<double> current_shape = ReProjectShape(mean_shape_, bounding_box);
     current_shapes.push_back(current_shape);
     int num_train_sample = (int)images.size();
-    
-//    cout << "mean_shape_"<<endl;
-//    cout << mean_shape_<<endl;
-//    cout <<"initialize shape"<<endl;
-//    cout << current_shapes[0]<<endl;
-//    
     for ( int stage = 0; stage < global_params.max_numstage; stage++){
-        cout << "derive binary codes given learned random forest in " << stage << "th stage"<< endl;
         struct feature_node ** binfeatures ;
         binfeatures = DeriveBinaryFeat(RandomForest_[stage],images,current_shapes,bounding_boxs, mean_shape_);
-        
-        cout << "learn increment of current stage"<<endl;
         GlobalPrediction(binfeatures, Models_[stage], current_shapes,bounding_boxs,num_train_sample,stage);
-//        cout <<"....."<<endl;
-//        cout << current_shapes[0]<<endl;
     }
     return current_shapes[0];
 }

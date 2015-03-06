@@ -29,7 +29,7 @@ using namespace std;
 using namespace cv;
 
 void TrainDemo(){
-    int img_num = 345;
+    int img_num = 1345;
     vector<Mat_<uchar> > images;
     vector<BoundingBox> bbox; 
     

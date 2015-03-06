@@ -21,6 +21,7 @@ void RandomForest::Train(
                          ){
     stages_ = stages;
     for (int i=0;i<num_landmark_;i++){
+        clock_t tt = clock();
         int dbsize = (int)images.size();
         int Q = floor(dbsize*1.0/((1-overlap_ratio_)*max_numtrees_));
         int is,ie;
@@ -35,6 +36,8 @@ void RandomForest::Train(
             }
             rfs_[i][j].Train(images, ground_truth_shapes, current_shapes, bounding_boxs, mean_shape,shapes_residual,index,stages_,i);
         }
+        double time = double(clock() - tt) / CLOCKS_PER_SEC;
+        cout << "the train rf of "<< i <<"th landmark cost "<< time<<"s"<<endl;
     }
 
 }
