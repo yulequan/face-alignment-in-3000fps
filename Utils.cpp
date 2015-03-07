@@ -148,12 +148,15 @@ double calculate_covariance(const vector<double>& v_1,
     v2 = v2 - mean_2;
     return mean(v1.mul(v2))[0]; 
 }
-void LoadDate(string filepath,
+
+void LoadDate(int img_num,
+              string filepath,
               std::vector<cv::Mat_<uchar> >& images,
               std::vector<cv::Mat_<double> >& ground_truth_shapes,
               std::vector<BoundingBox> & bounding_box
               ){
-    double img_num = 100;
+    
+    
     double landmark_num = 5;
     string image_name;
     cout << "Read images..." << endl;

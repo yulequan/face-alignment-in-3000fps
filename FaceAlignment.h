@@ -28,13 +28,18 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #ifndef FACE_ALIGNMENT_H
 #define FACE_ALIGNMENT_H
+#include "opencv2/objdetect/objdetect.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
 
+#include <cctype>
+#include <iostream>
+#include <iterator>
+#include <stdio.h>
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
 #include "cv.h"
-#include "opencv2/highgui/highgui.hpp"
-#include "opencv2/imgproc/imgproc.hpp"
 #include <ctime>
 #include <string>
 #include <limits>
@@ -48,12 +53,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 struct Params{
     
     double bagging_overlap = 0.4;
-    int max_numtrees = 10;
+    int max_numtrees = 20;
     int max_depth = 5;
     int landmark_num = 29;// to be decided
     int initial_num = 10;
     
-    int max_numstage = 4;
+    int max_numstage = 7;
     double max_radio_radius[10] = {0.4,0.3,0.2,0.15, 0.12, 0.10, 0.08, 0.06, 0.06,0.05};
 //    int max_numfeats[8] = {1000,1000, 1000, 500, 500, 500, 400, 400}; // number of pixel pairs
     int max_numfeats[8] = {200,200, 200, 100, 100, 100, 80, 80}; // number of pixel pairs
@@ -99,6 +104,7 @@ void LoadDate(std::string filepath,
 
 void TrainDemo();
 void TestDemo();
+int FaceDetectionAndAlignment(const char* inputname);
 
 
 #endif

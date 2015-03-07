@@ -80,24 +80,22 @@ void TestDemo (){
         cvtColor(test_images[index],test_image_1, COLOR_GRAY2BGR);
        
         // draw bounding box
-        line(test_image_1, Point2d(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y), Point2d(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y), Scalar(0,255,0),1,8,0);
-        line(test_image_1, Point2d(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y), Point2d(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height), Scalar(0,255,0),1,8,0);
-        line(test_image_1, Point2d(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height), Point2d(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height), Scalar(0,255,0),1,8,0);
-        line(test_image_1, Point2d(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height), Point2d(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y), Scalar(0,255,0),1,8,0);
-//        // draw initialize shape ::blue
-//        Mat_<double>initializeshape = ReProjectShape(regressor.mean_shape_, test_bounding_boxs[index]);
-//        for(int i = 0;i < landmark_num;i++){
-//            circle(test_image_1,Point2d(initializeshape(i,0),initializeshape(i,1)),1,Scalar(255,0,0),-1,8,0);
-//        }
-        
-//        // draw ground truth ::yellow
-//        for(int i = 0;i < landmark_num;i++){
-//            circle(test_image_1,Point2d(test_ground_truth_shapes[index](i,0),test_ground_truth_shapes[index](i,1)),1,Scalar(0,255,255),-1,8,0);
-//        }
-        // draw result :: red
+        rectangle(test_image_1, cvPoint(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y),
+                  cvPoint(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height),Scalar(0,255,0), 1, 8, 0);
+        // draw initialize shape ::blue
+        Mat_<double>initializeshape = ReProjectShape(regressor.mean_shape_, test_bounding_boxs[index]);
         for(int i = 0;i < landmark_num;i++){
-            circle(test_image_1,Point2d(current_shape(i,0),current_shape(i,1)),1,Scalar(0,0,255),-1,8,0);
+            circle(test_image_1,Point2d(initializeshape(i,0),initializeshape(i,1)),1,Scalar(255,0,0),-1,8,0);
         }
+        
+       // draw ground truth ::yellow
+       for(int i = 0;i < landmark_num;i++){
+           circle(test_image_1,Point2d(test_ground_truth_shapes[index](i,0),test_ground_truth_shapes[index](i,1)),1,Scalar(0,255,255),-1,8,0);
+       }
+        // // draw result :: red
+        // for(int i = 0;i < landmark_num;i++){
+        //     circle(test_image_1,Point2d(current_shape(i,0),current_shape(i,1)),1,Scalar(0,0,255),-1,8,0);
+        // }
         imshow("result",test_image_1);
         int c = waitKey();
         if (c =='q'){
