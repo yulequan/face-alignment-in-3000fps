@@ -39,7 +39,7 @@ int FaceDetectionAndAlignment(const char* inputname){
     }
     // -- 0. Load LBF model
     LBFRegressor regressor;
-    regressor.Load("/Users/lequan/workspace/xcode/myopencv/data/model.txt");
+    regressor.Load("/Users/lequan/workspace/xcode/myopencv/model/model.txt");
     
     // -- 1. Load the cascades
     if( !cascade.load( cascadeName ) ){
@@ -158,7 +158,7 @@ void detectAndDraw( Mat& img, CascadeClassifier& cascade,
     t = (double)cvGetTickCount() - t;
     printf( "detection time = %g ms\n", t/((double)cvGetTickFrequency()*1000.) );
     
-    // --Alignemnt
+    // --Alignment
     t =(double)cvGetTickCount();
     for( vector<Rect>::const_iterator r = faces.begin(); r != faces.end(); r++, i++ ){
         Point center;

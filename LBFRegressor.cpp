@@ -9,6 +9,7 @@
 #include "LBFRegressor.h"
 using namespace std;
 using namespace cv;
+
 struct feature_node ** LBFRegressor::DeriveBinaryFeat(
                                     const RandomForest& randf,
                                     const vector<Mat_<uchar> >& images,
@@ -132,6 +133,7 @@ void LBFRegressor::GlobalRegression(struct feature_node **binfeatures,
     // construct the parameter
     struct parameter* param = new struct parameter;
     param-> solver_type = L2R_L2LOSS_SVR_DUAL;
+  //  param-> solver_type = L2R_L2LOSS_SVR;
     param->C = 1.0/num_train_sample;
     param->p = 0;
     
@@ -258,6 +260,7 @@ void LBFRegressor::Train(const vector<Mat_<uchar> >& images,
     
     // get mean shape from training shapes(only origin train images)
     mean_shape_ = GetMeanShape(ground_truth_shapes,bounding_boxs);
+    cout << mean_shape_<<endl;
     // train random forest
     int num_feature = global_params.landmark_num * global_params.max_numtrees * pow(2,(global_params.max_depth-1));
     int num_train_sample = (int)augmented_images.size();
@@ -364,7 +367,7 @@ void  LBFRegressor::WriteRegressor(ofstream& fout){
         fout << Models_[i].size()<< endl;
         for (int j=0; j<Models_[i].size();j++){
             stringstream name;
-            name <<"/Users/lequan/workspace/xcode/myopencv/data/"<< i << "_" <<j<<".model";
+            name <<"/Users/lequan/workspace/xcode/myopencv/model/"<< i << "_" <<j<<".model";
             save_model(name.str().c_str(), Models_[i][j]);
         }
     }
@@ -399,7 +402,7 @@ void LBFRegressor::ReadRegressor(ifstream& fin){
         Models_[i].resize(num);
         for (int j=0;j<num;j++){
             stringstream name;
-            name <<"/Users/lequan/workspace/xcode/myopencv/data/"<< i << "_" <<j<<".model";
+            name <<"/Users/lequan/workspace/xcode/myopencv/model/"<< i << "_" <<j<<".model";
             Models_[i][j] = load_model(name.str().c_str());
         }
     }

@@ -8,6 +8,7 @@ using namespace std;
 using namespace cv;
 
 int main( int argc, const char** argv ){
+    TestDemo();
     if (argc==1){
         return FaceDetectionAndAlignment("");
     }

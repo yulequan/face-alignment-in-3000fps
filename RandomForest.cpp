@@ -10,6 +10,7 @@
 #include "RandomForest.h"
 using namespace std;
 using namespace cv;
+
 void RandomForest::Train(
                          const vector<Mat_<uchar> >& images,
                          const vector<Mat_<double> >& ground_truth_shapes,

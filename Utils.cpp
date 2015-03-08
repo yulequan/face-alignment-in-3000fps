@@ -148,45 +148,80 @@ double calculate_covariance(const vector<double>& v_1,
     v2 = v2 - mean_2;
     return mean(v1.mul(v2))[0]; 
 }
-
-void LoadDate(int img_num,
-              string filepath,
+Mat_<double> LoadGroundTruthShape(const char* filename){
+    Mat_<double> shape(global_params.landmark_num,2);
+    ifstream fin;
+    string temp;
+    
+    fin.open(filename);
+    getline(fin, temp);
+    getline(fin, temp);
+    getline(fin, temp);
+    for (int i=0;i<global_params.landmark_num;i++){
+        fin >> shape(i,0) >> shape(i,1);
+    }
+    fin.close();
+    return shape;
+    
+}
+BoundingBox CalculateBoundingBox(Mat_<double>& shape){
+    BoundingBox bbx;
+    int left_x = 10000;
+    int right_x = 0;
+    int top_y = 10000;
+    int bottom_y = 0;
+    for (int i=0; i < shape.rows;i++){
+        if (shape(i,0) < left_x)
+            left_x = shape(i,0);
+        if (shape(i,0) > right_x)
+            right_x = shape(i,0);
+        if (shape(i,1) < top_y)
+            top_y = shape(i,1);
+        if (shape(i,1) > bottom_y)
+            bottom_y = shape(i,1);
+    }
+    bbx.start_x = left_x;
+    bbx.start_y = top_y;
+    bbx.height  = bottom_y - top_y;
+    bbx.width   = right_x - left_x;
+    bbx.centroid_x = bbx.start_x + bbx.width/2.0;
+    bbx.centroid_y = bbx.start_y + bbx.height/2.0;
+    return bbx;
+}
+void LoadData(string filepath,
               std::vector<cv::Mat_<uchar> >& images,
               std::vector<cv::Mat_<double> >& ground_truth_shapes,
-              std::vector<BoundingBox> & bounding_box
+              std::vector<BoundingBox> & bounding_boxs
               ){
-    
-    
-    double landmark_num = 5;
-    string image_name;
-    cout << "Read images..." << endl;
-    for(int i = 0;i < img_num;i++){
-        image_name = filepath + to_string(i+1) + ".jpg";
-        Mat_<uchar> temp = imread(image_name,0);
-        images.push_back(temp);
-    }
-    
-    ifstream fin;
-    fin.open(filepath + "/boundingbox.txt");
-    for(int i = 0;i < img_num;i++){
-        BoundingBox temp;
-        fin>>temp.start_x>>temp.start_y>>temp.width>>temp.height;
-        temp.centroid_x = temp.start_x + temp.width/2.0;
-        temp.centroid_y = temp.start_y + temp.height/2.0;
-        bounding_box.push_back(temp);
-    }
-    fin.close();
-    
-    fin.open(filepath + "/keypoints.txt");
-    for(int i = 0;i < img_num;i++){
-        Mat_<double> temp(landmark_num,2);
-        for(int j = 0;j < landmark_num;j++){
-            fin>>temp(j,0);
+    FILE* f = fopen( filepath.c_str(), "rt" );
+    if( f ){
+        char buf[1000+1];
+        while( fgets( buf, 1000, f ) ){
+            int len = (int)strlen(buf), c;
+            while( len > 0 && isspace(buf[len-1]) )
+                len--;
+            buf[len] = '\0';
+            cout << "file:" << buf <<endl;
+            
+            // Read Image
+            Mat_<uchar> image = imread(buf,0);
+            images.push_back(image);
+            
+            // Read ground truth shapes
+            while(buf[len]!='.'){
+                len--;
+            }
+            buf[len+1]='p';
+            buf[len+2]='t';
+            buf[len+3]='s';
+            buf[len+4]='\0';
+            Mat_<double> ground_truth_shape = LoadGroundTruthShape(buf);
+            ground_truth_shapes.push_back(ground_truth_shape);
+            
+            // Read Bounding box
+            BoundingBox bbx = CalculateBoundingBox(ground_truth_shape);
+            bounding_boxs.push_back(bbx);
         }
-        for(int j = 0;j < landmark_num;j++){
-            fin>>temp(j,1);
-        }
-        ground_truth_shapes.push_back(temp);
+        fclose(f);
     }
-    fin.close();
 }

@@ -53,10 +53,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 struct Params{
     
     double bagging_overlap = 0.4;
-    int max_numtrees = 20;
+    int max_numtrees = 10;
     int max_depth = 5;
-    int landmark_num = 29;// to be decided
-    int initial_num = 10;
+    int landmark_num = 68;// to be decided
+    int initial_num = 1;
     
     int max_numstage = 7;
     double max_radio_radius[10] = {0.4,0.3,0.2,0.15, 0.12, 0.10, 0.08, 0.06, 0.06,0.05};
@@ -65,6 +65,7 @@ struct Params{
     int max_numthreshs = 50;
 };
 static Params global_params;
+
 class BoundingBox{
     public:
         double start_x;
@@ -97,7 +98,7 @@ void SimilarityTransform(const cv::Mat_<double>& shape1, const cv::Mat_<double>&
                          cv::Mat_<double>& rotation,double& scale);
 double calculate_covariance(const std::vector<double>& v_1,
                             const std::vector<double>& v_2);
-void LoadDate(std::string filepath,
+void LoadData(std::string filepath,
               std::vector<cv::Mat_<uchar> >& images,
               std::vector<cv::Mat_<double> >& ground_truth_shapes,
               std::vector<BoundingBox> & bounding_box);
