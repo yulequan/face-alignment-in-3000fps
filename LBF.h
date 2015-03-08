@@ -52,20 +52,19 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 struct Params{
     
-    double bagging_overlap = 0.4;
-    int max_numtrees = 10;
-    int max_depth = 5;
-    int landmark_num = 68;// to be decided
-    int initial_num = 1;
+    double bagging_overlap;
+    int max_numtrees;
+    int max_depth;
+    int landmark_num;// to be decided
+    int initial_num;
     
-    int max_numstage = 7;
-    double max_radio_radius[10] = {0.4,0.3,0.2,0.15, 0.12, 0.10, 0.08, 0.06, 0.06,0.05};
-//    int max_numfeats[8] = {1000,1000, 1000, 500, 500, 500, 400, 400}; // number of pixel pairs
-    int max_numfeats[8] = {200,200, 200, 100, 100, 100, 80, 80}; // number of pixel pairs
-    int max_numthreshs = 50;
+    int max_numstage;
+    double max_radio_radius[10];
+    int max_numfeats[10]; // number of pixel pairs
+    int max_numthreshs;
 };
-static Params global_params;
-
+extern Params global_params;
+extern cv::string modelPath;
 class BoundingBox{
     public:
         double start_x;
@@ -106,6 +105,6 @@ void LoadData(std::string filepath,
 void TrainDemo();
 void TestDemo();
 int FaceDetectionAndAlignment(const char* inputname);
-
+void ReadGlobalParamFromFile(cv::string path);
 
 #endif

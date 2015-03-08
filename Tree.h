@@ -9,7 +9,7 @@
 #ifndef __myopencv__Tree__
 #define __myopencv__Tree__
 
-#include "FaceAlignment.h"
+#include "LBF.h"
 
 class Node {
 public:

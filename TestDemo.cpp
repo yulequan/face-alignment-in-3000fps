@@ -43,7 +43,7 @@ void TestDemo (){
  
     LoadData(testdatapath, test_images, test_ground_truth_shapes, test_bounding_boxs);
     LBFRegressor regressor;
-    regressor.Load("/Users/lequan/workspace/xcode/myopencv/model/model.txt");
+    regressor.Load(modelPath+"model.txt");
     
     int index = 0;
     namedWindow("result",WINDOW_AUTOSIZE);
@@ -54,7 +54,6 @@ void TestDemo (){
         }
         cout << "Predict "<< index << endl;
         Mat_<double> current_shape = regressor.Predict(test_images[index],test_bounding_boxs[index],initial_number);
-        cout << current_shape<<endl;
         Mat test_image_1;
         cvtColor(test_images[index],test_image_1, COLOR_GRAY2BGR);
        
