@@ -28,18 +28,16 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "LBFRegressor.h"
 using namespace std;
 using namespace cv;
-void LoadTestData(int img_num,
-                  vector<Mat_<uchar> >& images,
-                  vector<Mat_<double> >& ground_truth_shapes,
-                  vector<BoundingBox>& bounding_boxs);
+void LoadCofwTestData(vector<Mat_<uchar> >& images,
+                      vector<Mat_<double> >& ground_truth_shapes,
+                      vector<BoundingBox>& bounding_boxs);
 void TestDemo (){
     vector<Mat_<uchar> > test_images;
     vector<BoundingBox> test_bounding_boxs;
     vector<Mat_<double> >test_ground_truth_shapes;
     string testdatapath = "/Users/lequan/Desktop/study/face/face-alignment-3000fps/Datasets/lfpw_testset/Path_Images.txt";
-//    int test_img_num = 507;
     int initial_number = 20;
-//    LoadTestData(test_img_num, test_images, test_ground_truth_shapes, test_bounding_boxs);
+//    LoadCofwTestData(test_images, test_ground_truth_shapes, test_bounding_boxs);
  
     LoadData(testdatapath, test_images, test_ground_truth_shapes, test_bounding_boxs);
     LBFRegressor regressor;
@@ -60,11 +58,11 @@ void TestDemo (){
         // draw bounding box
         rectangle(test_image_1, cvPoint(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y),
                   cvPoint(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height),Scalar(0,255,0), 1, 8, 0);
-//        // draw initialize shape ::blue
-//        Mat_<double>initializeshape = ReProjectShape(regressor.mean_shape_, test_bounding_boxs[index]);
-//        for(int i = 0;i < landmark_num;i++){
-//            circle(test_image_1,Point2d(initializeshape(i,0),initializeshape(i,1)),1,Scalar(255,0,0),-1,8,0);
-//        }
+        // draw initialize shape ::blue
+        Mat_<double>initializeshape = ReProjectShape(regressor.mean_shape_, test_bounding_boxs[index]);
+        for(int i = 0;i < global_params.landmark_num;i++){
+            circle(test_image_1,Point2d(initializeshape(i,0),initializeshape(i,1)),1,Scalar(255,0,0),-1,8,0);
+        }
         
 //       // draw ground truth ::yellow
 //       for(int i = 0;i < global_params.landmark_num;i++){
@@ -85,10 +83,12 @@ void TestDemo (){
     return ;
 }
 
-void LoadTestData(int img_num,
+
+void LoadCofwTestData(
                   vector<Mat_<uchar> >& images,
                   vector<Mat_<double> >& ground_truth_shapes,
                   vector<BoundingBox>& bounding_boxs){
+    int img_num = 507;
     cout<<"Read images..."<<endl;
     for(int i = 0;i < img_num;i++){
         string image_name = "/Users/lequan/workspace/xcode/myopencv/COFW_Dataset/testImages/";

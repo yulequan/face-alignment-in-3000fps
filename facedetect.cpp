@@ -20,26 +20,31 @@ int FaceDetectionAndAlignment(const char* inputname){
         inputName.assign(inputname);
     }
     
+    // name is empty or a number
     if( inputName.empty() || (isdigit(inputName.c_str()[0]) && inputName.c_str()[1] == '\0') ){
         capture = cvCaptureFromCAM( inputName.empty() ? 0 : inputName.c_str()[0] - '0' );
         int c = inputName.empty() ? 0 : inputName.c_str()[0] - '0' ;
         if(!capture) cout << "Capture from CAM " <<  c << " didn't work" << endl;
+        return -1;
     }
+    // name is not empty
     else if( inputName.size() ){
-        image = imread( inputName, 1 );
-        if( image.empty() )
-        {
+        if (inputName.find(".jpg")!=string::npos||inputName.find(".png")!=string::npos
+            ||inputName.find(".bmp")!=string::npos){
+            image = imread( inputName, 1 );
+            if (image.empty()) cout << "Read Image fail" << endl;
+            return -1;
+        }
+        else if(inputName.find(".mp4")!=string::npos||inputName.find(".avi")!=string::npos
+                ||inputName.find(".wmv")!=string::npos){
             capture = cvCaptureFromAVI( inputName.c_str() );
             if(!capture) cout << "Capture from AVI didn't work" << endl;
+            return -1;
         }
-    }
-    else{
-        cout << "No input file" << endl;
-        return -1;
     }
     // -- 0. Load LBF model
     LBFRegressor regressor;
-    regressor.Load("/Users/lequan/workspace/xcode/myopencv/model/model.txt");
+    regressor.Load(modelPath+"model.txt");
     
     // -- 1. Load the cascades
     if( !cascade.load( cascadeName ) ){
@@ -73,14 +78,16 @@ _cleanup_:
         cvReleaseCapture( &capture );
     }
     else{
-        cout << "In image read" << endl;
+       
         if( !image.empty() ){
+            cout << "In image read" << endl;
             detectAndDraw( image, cascade, nestedCascade,regressor,  scale, tryflip );
             waitKey(0);
         }
         else if( !inputName.empty() ){
             /* assume it is a text file containing the
             list of the image filenames to be processed - one per line */
+            cout << "In image set model" << endl;
             FILE* f = fopen( inputName.c_str(), "rt" );
             if( f ){
                 char buf[1000+1];

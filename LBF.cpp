@@ -13,8 +13,6 @@ string modelPath ="/Users/lequan/workspace/xcode/myopencv/model/";
 void InitializeGlobalParam();
 
 int main( int argc, const char** argv ){
-    
-    //InitializeGlobalParam
     if (argc > 1 && strcmp(argv[1],"TrainDemo")==0){
         InitializeGlobalParam();
     }

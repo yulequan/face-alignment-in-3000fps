@@ -27,12 +27,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "LBFRegressor.h"
 using namespace std;
 using namespace cv;
-void LoadTrainData(int img_num,
-                   vector<Mat_<uchar> >& images,
-                   vector<Mat_<double> >& ground_truth_shapes,
-                   vector<BoundingBox>& bounding_boxs);
+void LoadCofwTrainData(vector<Mat_<uchar> >& images,
+                       vector<Mat_<double> >& ground_truth_shapes,
+                       vector<BoundingBox>& bounding_boxs);
 void TrainDemo(){
-    int img_num = 1345;
     vector<Mat_<uchar> > images;
     vector<Mat_<double> > ground_truth_shapes;
     vector<BoundingBox> bounding_boxs;
@@ -40,17 +38,19 @@ void TrainDemo(){
     string traindatapath2 = "/Users/lequan/Desktop/study/face/face-alignment-3000fps/Datasets/lfpw_trainset/Path_Images.txt";
     LBFRegressor regressor;
 
-//    LoadTrainData(img_num, images, ground_truth_shapes, bounding_boxs);
+//    LoadCofwTrainData(images, ground_truth_shapes, bounding_boxs);
     LoadData(traindatapath1, images, ground_truth_shapes, bounding_boxs);
     LoadData(traindatapath2, images, ground_truth_shapes, bounding_boxs);
     regressor.Train(images,ground_truth_shapes,bounding_boxs);
     regressor.Save(modelPath+"model.txt");
     return;
 }
-void LoadTrainData(int img_num,
-                   vector<Mat_<uchar> >& images,
-                   vector<Mat_<double> >& ground_truth_shapes,
-                   vector<BoundingBox>& bounding_boxs){
+
+
+void LoadCofwTrainData(vector<Mat_<uchar> >& images,
+                       vector<Mat_<double> >& ground_truth_shapes,
+                       vector<BoundingBox>& bounding_boxs){
+    int img_num = 1345;
     cout<<"Read images..."<<endl;
     for(int i = 0;i < img_num;i++){
         string image_name = "/Users/lequan/workspace/xcode/myopencv/COFW_Dataset/trainingImages/";
