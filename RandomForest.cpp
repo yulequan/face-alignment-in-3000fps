@@ -43,11 +43,11 @@ void RandomForest::Train(
 
 }
 void RandomForest::Write(std::ofstream& fout){
-    fout << stages_ <<endl;
-    fout << max_numtrees_<<endl;
-    fout << num_landmark_<<endl;
-    fout << max_depth_ <<endl;
-    fout << overlap_ratio_ <<endl;
+    fout.write((char*)&stages_, sizeof(int));
+    fout.write((char*)&max_numtrees_, sizeof(int));
+    fout.write((char*)&num_landmark_, sizeof(int));
+    fout.write((char*)&max_depth_, sizeof(int));
+    fout.write((char*)&overlap_ratio_, sizeof(double));
     for (int i=0; i< num_landmark_;i++){
         for (int j = 0; j < max_numtrees_; j++){
             rfs_[i][j].Write(fout);
@@ -55,11 +55,11 @@ void RandomForest::Write(std::ofstream& fout){
     }
 }
 void RandomForest::Read(std::ifstream& fin){
-    fin >> stages_;
-    fin >> max_numtrees_;
-    fin >> num_landmark_;
-    fin >> max_depth_;
-    fin >> overlap_ratio_;
+    fin.read((char*)&stages_, sizeof(int));
+    fin.read((char*)&max_numtrees_, sizeof(int));
+    fin.read((char*)&num_landmark_, sizeof(int));
+    fin.read((char*)&max_depth_, sizeof(int));
+    fin.read((char*)&overlap_ratio_, sizeof(double));
     for (int i=0; i< num_landmark_;i++){
         for (int j = 0; j < max_numtrees_; j++){
             rfs_[i][j].Read(fin);

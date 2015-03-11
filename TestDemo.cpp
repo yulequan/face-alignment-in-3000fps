@@ -41,7 +41,7 @@ double TestDemo (){
 //    LoadData(testdatapath, test_images, test_ground_truth_shapes, test_bounding_boxs);
     LoadOpencvBbxData(testdatapath, test_images, test_ground_truth_shapes, test_bounding_boxs);
     LBFRegressor regressor;
-    regressor.Load(modelPath+"model.txt");
+    regressor.Load(modelPath+"LBF.model");
     vector<Mat_<double> > current_shape = regressor.Predict(test_images,test_bounding_boxs,initial_number);
     double MRSE_sum = 0;
     for (int i =0; i<current_shape.size();i++){
@@ -59,42 +59,4 @@ double TestDemo (){
     }
     cout << test_ground_truth_shapes.size()<<endl;
     return MRSE_sum/test_ground_truth_shapes.size();
-}
-
-
-void LoadCofwTestData(vector<Mat_<uchar> >& images,
-                      vector<Mat_<double> >& ground_truth_shapes,
-                      vector<BoundingBox>& bounding_boxs){
-    int img_num = 507;
-    cout<<"Read images..."<<endl;
-    for(int i = 0;i < img_num;i++){
-        string image_name = "/Users/lequan/workspace/xcode/myopencv/COFW_Dataset/testImages/";
-        image_name = image_name + to_string(i+1) + ".jpg";
-        Mat_<uchar> temp = imread(image_name,0);
-        images.push_back(temp);
-    }
-    
-    ifstream fin;
-    fin.open("/Users/lequan/workspace/xcode/myopencv/COFW_Dataset/boundingbox_test.txt");
-    for(int i = 0;i < img_num;i++){
-        BoundingBox temp;
-        fin>>temp.start_x>>temp.start_y>>temp.width>>temp.height;
-        temp.centroid_x = temp.start_x + temp.width/2.0;
-        temp.centroid_y = temp.start_y + temp.height/2.0;
-        bounding_boxs.push_back(temp);
-    }
-    fin.close();
-    
-    fin.open("/Users/lequan/workspace/xcode/myopencv/COFW_Dataset/keypoints_test.txt");
-    for(int i = 0;i < img_num;i++){
-        Mat_<double> temp(global_params.landmark_num,2);
-        for(int j = 0;j < global_params.landmark_num;j++){
-            fin>>temp(j,0);
-        }
-        for(int j = 0;j < global_params.landmark_num;j++){
-            fin>>temp(j,1);
-        }
-        ground_truth_shapes.push_back(temp);
-    }
-    fin.close();
 }

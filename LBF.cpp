@@ -14,13 +14,21 @@ string modelPath ="/Users/lequan/workspace/xcode/myopencv/model/";
 string cascadeName = "haarcascade_frontalface_alt.xml";
 double scale = 1.3;
 void InitializeGlobalParam();
+struct A {
+    double a;
+    int b[3];
+};
 
 int main( int argc, const char** argv ){
+//    A a;
+//    cout << sizeof(a)<<endl;
+//    cout << sizeof(A)<<endl;
+    
     if (argc > 1 && strcmp(argv[1],"TrainDemo")==0){
         InitializeGlobalParam();
     }
     else {
-        ReadGlobalParamFromFile(modelPath+"model.txt");
+        ReadGlobalParamFromFile(modelPath+"LBF.model");
     }
 //    LBFRegressor regressor;
 //    regressor.Load(modelPath+"model.txt");
@@ -64,22 +72,16 @@ void InitializeGlobalParam(){
 void ReadGlobalParamFromFile(string path){
     cout << "Loading GlobalParam..." << endl;
     ifstream fin;
-    fin.open(path);
-    fin >> global_params.bagging_overlap;
-    fin >> global_params.max_numtrees;
-    fin >> global_params.max_depth;
-    fin >> global_params.max_numthreshs;
-    fin >> global_params.landmark_num;
-    fin >> global_params.initial_num;
-    fin >> global_params.max_numstage;
-    
-    for (int i = 0; i< global_params.max_numstage; i++){
-        fin >> global_params.max_radio_radius[i];
-    }
-    
-    for (int i = 0; i < global_params.max_numstage; i++){
-        fin >> global_params.max_numfeats[i];
-    }
+    fin.open(path,ios::binary);
+    fin.read((char*)&global_params.bagging_overlap, sizeof(double));
+    fin.read((char*)&global_params.max_numtrees, sizeof(int));
+    fin.read((char*)&global_params.max_depth, sizeof(int));
+    fin.read((char*)&global_params.max_numthreshs, sizeof(int));
+    fin.read((char*)&global_params.landmark_num, sizeof(int));
+    fin.read((char*)&global_params.initial_num, sizeof(int));
+    fin.read((char*)&global_params.max_numstage, sizeof(int));
+    fin.read((char*)global_params.max_radio_radius, sizeof(double)*global_params.max_numstage);
+    fin.read((char*)global_params.max_numfeats, sizeof(int)*global_params.max_numstage);
     cout << "End"<<endl;
     fin.close();
 }
