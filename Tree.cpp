@@ -284,6 +284,8 @@ void Tree::Splitnode(const vector<Mat_<uchar> >& images,
 }
 
 void Tree::Write(std:: ofstream& fout){
+    fout.close();
+    fout.open("/Users/lequan/workspace/xcode/myopencv/model/1.model",ios::binary|ios::app);
     fout.write((char*)&landmarkID_, sizeof(int));
     fout.write((char*)&max_depth_, sizeof(int));
     fout.write((char*)&max_numnodes_, sizeof(int));
@@ -294,32 +296,36 @@ void Tree::Write(std:: ofstream& fout){
     fout.write((char*)&overlap_ration_, sizeof(double));
     int num = (int)id_leafnodes_.size();
     fout.write((char*)&num, sizeof(int));
+    cout << num <<endl;
     for (int i=0;i<id_leafnodes_.size();i++){
         fout.write((char*)&id_leafnodes_[i], sizeof(int));
     }
     for (int i=0; i <max_numnodes_;i++){
         nodes_[i].Write(fout);
     }
+    fout.close();
+    fout.open("/Users/lequan/workspace/xcode/myopencv/model/1.model",ios::binary|ios::app);
+
 }
 void Tree::Read(std::ifstream& fin){
-    fin.read((char*)&landmarkID_, sizeof(int));
-    fin.read((char*)&max_depth_, sizeof(int));
-    fin.read((char*)&max_numnodes_, sizeof(int));
-    fin.read((char*)&num_leafnodes_, sizeof(int));
-    fin.read((char*)&num_nodes_, sizeof(int));
-    fin.read((char*)&max_numfeats_, sizeof(int));
-    fin.read((char*)&max_radio_radius_, sizeof(double));
-    fin.read((char*)&overlap_ration_, sizeof(double));
-    int num;
-    fin.read((char*)&num, sizeof(int));
+    fin >> landmarkID_;
+    fin >> max_depth_;
+    fin >> max_numnodes_;
+    fin >> num_leafnodes_;
+    fin >> num_nodes_;
+    fin >> max_numfeats_;
+    fin >> max_radio_radius_;
+    fin >> overlap_ration_;
+    
+    int num =0;
+    fin >> num;
     id_leafnodes_.resize(num);
     for (int i=0;i<num;i++){
-        fin.read((char*)&id_leafnodes_[i], sizeof(int));
+        fin >> id_leafnodes_[i];
     }
     
     for (int i=0; i <max_numnodes_;i++){
         nodes_[i].Read(fin);
     }
 }
-
 

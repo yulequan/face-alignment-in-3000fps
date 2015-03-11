@@ -55,11 +55,11 @@ void RandomForest::Write(std::ofstream& fout){
     }
 }
 void RandomForest::Read(std::ifstream& fin){
-    fin.read((char*)&stages_, sizeof(int));
-    fin.read((char*)&max_numtrees_, sizeof(int));
-    fin.read((char*)&num_landmark_, sizeof(int));
-    fin.read((char*)&max_depth_, sizeof(int));
-    fin.read((char*)&overlap_ratio_, sizeof(double));
+    fin >> stages_;
+    fin >> max_numtrees_;
+    fin >> num_landmark_;
+    fin >> max_depth_;
+    fin >> overlap_ratio_;
     for (int i=0; i< num_landmark_;i++){
         for (int j = 0; j < max_numtrees_; j++){
             rfs_[i][j].Read(fin);

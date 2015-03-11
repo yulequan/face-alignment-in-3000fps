@@ -343,7 +343,7 @@ void LBFRegressor::Save(string path){
 void LBFRegressor::Load(string path){
     cout << "Loading model..." << endl;
     ifstream fin;
-    fin.open(path,ios::binary);
+    fin.open(path);
     ReadGlobalParam(fin);
     ReadRegressor(fin);
     fin.close();
@@ -367,37 +367,47 @@ void  LBFRegressor::WriteRegressor(ofstream& fout){
     }
     for (int i=0; i < global_params.max_numstage; i++ ){
         RandomForest_[i].Write(fout);
-        fout << Models_[i].size()<< endl;
+        int num = (int)Models_[i].size();
+        fout.write((char*)&num, sizeof(int));
         for (int j=0; j<Models_[i].size();j++){
             save_model_bin(fout, Models_[i][j]);
         }
+
     }
 }
 void  LBFRegressor::ReadGlobalParam(ifstream& fin){
-    fin.read((char*)&global_params.bagging_overlap, sizeof(double));
-    fin.read((char*)&global_params.max_numtrees, sizeof(int));
-    fin.read((char*)&global_params.max_depth, sizeof(int));
-    fin.read((char*)&global_params.max_numthreshs, sizeof(int));
-    fin.read((char*)&global_params.landmark_num, sizeof(int));
-    fin.read((char*)&global_params.initial_num, sizeof(int));
-    fin.read((char*)&global_params.max_numstage, sizeof(int));
-    fin.read((char*)global_params.max_radio_radius, sizeof(double)*global_params.max_numstage);
-    fin.read((char*)global_params.max_numfeats, sizeof(int)*global_params.max_numstage);}
+    fin >> global_params.bagging_overlap;
+    fin >> global_params.max_numtrees;
+    fin >> global_params.max_depth;
+    fin >> global_params.max_numthreshs;
+    fin >> global_params.landmark_num;
+    fin >> global_params.initial_num;
+    fin >> global_params.max_numstage;
+    
+    for (int i = 0; i< global_params.max_numstage; i++){
+        fin >> global_params.max_radio_radius[i];
+    }
+    
+    for (int i = 0; i < global_params.max_numstage; i++){
+        fin >> global_params.max_numfeats[i];
+    }
+}
 
 void LBFRegressor::ReadRegressor(ifstream& fin){
     mean_shape_ = Mat::zeros(global_params.landmark_num,2,CV_64FC1);
     for(int i = 0;i < global_params.landmark_num;i++){
-        fin.read((char*)&mean_shape_(i,0), sizeof(double));
-        fin.read((char*)&mean_shape_(i,1), sizeof(double));
+        fin >> mean_shape_(i,0) >> mean_shape_(i,1);
     }
+    ifstream fin_reg;
+    fin_reg.open(modelPath + "/Regressor.model",ios::binary);
     for (int i=0; i < global_params.max_numstage; i++ ){
         RandomForest_[i].Read(fin);
         int num =0;
         fin >> num;
         Models_[i].resize(num);
         for (int j=0;j<num;j++){
-            Models_[i][j]   = load_model_bin(fin);
+            Models_[i][j]   = load_model_bin(fin_reg);
         }
     }
+    fin_reg.close();
 }
-
