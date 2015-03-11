@@ -4,6 +4,7 @@
  */
 
 #include "LBF.h"
+#include "LBFRegressor.h"
 using namespace std;
 using namespace cv;
 
@@ -15,15 +16,15 @@ double scale = 1.3;
 void InitializeGlobalParam();
 
 int main( int argc, const char** argv ){
-//    InitializeGlobalParam();
-//    TrainDemo();
     if (argc > 1 && strcmp(argv[1],"TrainDemo")==0){
         InitializeGlobalParam();
     }
     else {
         ReadGlobalParamFromFile(modelPath+"model.txt");
     }
-//    FaceDetectionAndAlignment("/Users/lequan/workspace/xcode/myopencv/build/img/multipeople.jpg");
+//    LBFRegressor regressor;
+//    regressor.Load(modelPath+"model.txt");
+//    regressor.Save("/Users/lequan/workspace/xcode/myopencv/model/1.model");
     // main process
     if (argc==1){
         return FaceDetectionAndAlignment("");
@@ -32,7 +33,8 @@ int main( int argc, const char** argv ){
         TrainDemo();
     }
     else if (strcmp(argv[1], "TestDemo")==0){
-        TestDemo();
+        double MRSE = TestDemo();
+        cout << "Mean Root Square Error is "<< MRSE*100 <<"%"<<endl;
     }
     else{
         return FaceDetectionAndAlignment(argv[1]);

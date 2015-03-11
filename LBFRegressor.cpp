@@ -200,8 +200,8 @@ void LBFRegressor::GlobalPrediction(struct feature_node** binfeatures,
                       const vector<struct model*>& models,
                       vector<Mat_<double> >& current_shapes,
                       const vector<BoundingBox> & bounding_boxs,
-                      int num_train_sample,
                       int stages){
+    int num_train_sample = (int)current_shapes.size();
     int num_residual = current_shapes[0].rows*2;
     double tmp;
     double scale;
@@ -290,30 +290,42 @@ void LBFRegressor::ReleaseFeatureSpace(struct feature_node ** binfeatures,
     delete[] binfeatures;
 }
 
+vector<Mat_<double> > LBFRegressor::Predict(const vector<Mat_<uchar> >& images,
+                                    const vector<BoundingBox>& bounding_boxs,
+                                    int initial_num){
+    
+    vector<Mat_<double> > current_shapes;
+    for (int i=0; i<images.size();i++){
+        Mat_<double> current_shape = ReProjectShape(mean_shape_, bounding_boxs[i]);
+        current_shapes.push_back(current_shape);
+    }
+  
+    for ( int stage = 0; stage < global_params.max_numstage; stage++){
+        struct feature_node ** binfeatures ;
+        binfeatures = DeriveBinaryFeat(RandomForest_[stage],images,current_shapes,bounding_boxs, mean_shape_);
+        GlobalPrediction(binfeatures, Models_[stage], current_shapes,bounding_boxs,stage);
+    }
+    return current_shapes;
+}
+
 Mat_<double>  LBFRegressor::Predict(const cv::Mat_<uchar>& image,
                                     const BoundingBox& bounding_box,
                                     int initial_num){
-    
-    Mat_<double> result = Mat::zeros(global_params.landmark_num,2, CV_64FC1);
-
     vector<Mat_<uchar> > images;
     vector<Mat_<double> > current_shapes;
     vector<BoundingBox>  bounding_boxs;
     
     images.push_back(image);
     bounding_boxs.push_back(bounding_box);
-    Mat_<double> current_shape = ReProjectShape(mean_shape_, bounding_box);
-    current_shapes.push_back(current_shape);
-    int num_train_sample = (int)images.size();
+    current_shapes.push_back(ReProjectShape(mean_shape_, bounding_box));
+    
     for ( int stage = 0; stage < global_params.max_numstage; stage++){
         struct feature_node ** binfeatures ;
         binfeatures = DeriveBinaryFeat(RandomForest_[stage],images,current_shapes,bounding_boxs, mean_shape_);
-        GlobalPrediction(binfeatures, Models_[stage], current_shapes,bounding_boxs,num_train_sample,stage);
+        GlobalPrediction(binfeatures, Models_[stage], current_shapes,bounding_boxs,stage);
     }
     return current_shapes[0];
 }
-
-
 
 void LBFRegressor::Save(string path){
     cout << endl<<"Saving model..." << endl;
@@ -348,6 +360,7 @@ void  LBFRegressor::WriteGlobalParam(ofstream& fout){
     
     for (int i = 0; i< global_params.max_numstage; i++){
         fout << global_params.max_radio_radius[i] << " ";
+        
     }
     fout << endl;
     
@@ -361,16 +374,16 @@ void  LBFRegressor::WriteRegressor(ofstream& fout){
         fout << mean_shape_(i,0)<<" "<< mean_shape_(i,1)<<" ";
     }
     fout<<endl;
-    
+    ofstream fout_reg;
+    fout_reg.open(modelPath + "/Regressor.model",ios::binary);
     for (int i=0; i < global_params.max_numstage; i++ ){
         RandomForest_[i].Write(fout);
         fout << Models_[i].size()<< endl;
         for (int j=0; j<Models_[i].size();j++){
-            stringstream name;
-            name <<"/Users/lequan/workspace/xcode/myopencv/model/"<< i << "_" <<j<<".model";
-            save_model(name.str().c_str(), Models_[i][j]);
+            save_model_bin(fout_reg, Models_[i][j]);
         }
     }
+    fout_reg.close();
 }
 void  LBFRegressor::ReadGlobalParam(ifstream& fin){
     fin >> global_params.bagging_overlap;
@@ -395,16 +408,17 @@ void LBFRegressor::ReadRegressor(ifstream& fin){
     for(int i = 0;i < global_params.landmark_num;i++){
         fin >> mean_shape_(i,0) >> mean_shape_(i,1);
     }
+    ifstream fin_reg;
+    fin_reg.open(modelPath + "/Regressor.model",ios::binary);
     for (int i=0; i < global_params.max_numstage; i++ ){
         RandomForest_[i].Read(fin);
         int num =0;
         fin >> num;
         Models_[i].resize(num);
         for (int j=0;j<num;j++){
-            stringstream name;
-            name <<"/Users/lequan/workspace/xcode/myopencv/model/"<< i << "_" <<j<<".model";
-            Models_[i][j] = load_model(name.str().c_str());
+            Models_[i][j]   = load_model_bin(fin_reg);
         }
     }
+    fin_reg.close();
 }
 

@@ -31,63 +31,40 @@ using namespace cv;
 void LoadCofwTestData(vector<Mat_<uchar> >& images,
                       vector<Mat_<double> >& ground_truth_shapes,
                       vector<BoundingBox>& bounding_boxs);
-void TestDemo (){
+double TestDemo (){
     vector<Mat_<uchar> > test_images;
     vector<BoundingBox> test_bounding_boxs;
     vector<Mat_<double> >test_ground_truth_shapes;
     string testdatapath = "/Users/lequan/Desktop/study/face/face-alignment-3000fps/Datasets/lfpw_testset/Path_Images.txt";
     int initial_number = 20;
 //    LoadCofwTestData(test_images, test_ground_truth_shapes, test_bounding_boxs);
- 
+//    LoadData(testdatapath, test_images, test_ground_truth_shapes, test_bounding_boxs);
     LoadOpencvBbxData(testdatapath, test_images, test_ground_truth_shapes, test_bounding_boxs);
     LBFRegressor regressor;
     regressor.Load(modelPath+"model.txt");
-    
-    int index = 0;
-    namedWindow("result",WINDOW_AUTOSIZE);
-    while(true){
-        index++;
-        if (index >500){
-            break;
-        }
-        cout << "Predict "<< index << endl;
-        Mat_<double> current_shape = regressor.Predict(test_images[index],test_bounding_boxs[index],initial_number);
-        Mat test_image_1;
-        cvtColor(test_images[index],test_image_1, COLOR_GRAY2BGR);
-       
-        // draw bounding box
-        rectangle(test_image_1, cvPoint(test_bounding_boxs[index].start_x,test_bounding_boxs[index].start_y),
-                  cvPoint(test_bounding_boxs[index].start_x+test_bounding_boxs[index].width,test_bounding_boxs[index].start_y+test_bounding_boxs[index].height),Scalar(0,255,0), 1, 8, 0);
-        // draw initialize shape ::blue
-        Mat_<double>initializeshape = ReProjectShape(regressor.mean_shape_, test_bounding_boxs[index]);
-        for(int i = 0;i < global_params.landmark_num;i++){
-            circle(test_image_1,Point2d(initializeshape(i,0),initializeshape(i,1)),1,Scalar(255,0,0),-1,8,0);
-        }
+    vector<Mat_<double> > current_shape = regressor.Predict(test_images,test_bounding_boxs,initial_number);
+    double MRSE_sum = 0;
+    for (int i =0; i<current_shape.size();i++){
+        MRSE_sum += CalculateError(test_ground_truth_shapes[i], current_shape[i]);
+//        // draw bounding box
+//        rectangle(test_images[i], cvPoint(test_bounding_boxs[i].start_x,test_bounding_boxs[i].start_y),
+//                  cvPoint(test_bounding_boxs[i].start_x+test_bounding_boxs[i].width,test_bounding_boxs[i].start_y+test_bounding_boxs[i].height),Scalar(0,255,0), 1, 8, 0);
+//        // draw result :: red
+//        for(int j = 0;j < global_params.landmark_num;j++){
+//            circle(test_images[i],Point2d(current_shape[i](j,0),current_shape[i](j,1)),1,Scalar(0,0,255),3,8,0);
+//        }
+//        imshow("result", test_images[i]);
+//        waitKey(0);
         
-//       // draw ground truth ::yellow
-//       for(int i = 0;i < global_params.landmark_num;i++){
-//           circle(test_image_1,Point2d(test_ground_truth_shapes[index](i,0),test_ground_truth_shapes[index](i,1)),1,Scalar(0,255,255),-1,8,0);
-//       }
-         // draw result :: red
-         for(int i = 0;i < global_params.landmark_num;i++){
-             circle(test_image_1,Point2d(current_shape(i,0),current_shape(i,1)),1,Scalar(0,0,255),2,8,0);
-         }
-        imshow("result",test_image_1);
-        int c = waitKey();
-        if (c =='q'){
-            destroyWindow("result");
-            return;
-        }
     }
-    destroyWindow("result");
-    return ;
+    cout << test_ground_truth_shapes.size()<<endl;
+    return MRSE_sum/test_ground_truth_shapes.size();
 }
 
 
-void LoadCofwTestData(
-                  vector<Mat_<uchar> >& images,
-                  vector<Mat_<double> >& ground_truth_shapes,
-                  vector<BoundingBox>& bounding_boxs){
+void LoadCofwTestData(vector<Mat_<uchar> >& images,
+                      vector<Mat_<double> >& ground_truth_shapes,
+                      vector<BoundingBox>& bounding_boxs){
     int img_num = 507;
     cout<<"Read images..."<<endl;
     for(int i = 0;i < img_num;i++){
@@ -121,4 +98,3 @@ void LoadCofwTestData(
     }
     fin.close();
 }
-

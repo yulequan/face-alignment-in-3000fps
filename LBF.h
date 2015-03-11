@@ -36,6 +36,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <iostream>
 #include <iterator>
 #include <stdio.h>
+#include <stdlib.h>
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
@@ -108,8 +109,8 @@ void LoadOpencvBbxData(std::string filepath,
                        );
 
 void TrainDemo();
-void TestDemo();
+double TestDemo();
 int FaceDetectionAndAlignment(const char* inputname);
 void ReadGlobalParamFromFile(cv::string path);
-
+double CalculateError(cv::Mat_<double>& ground_truth_shape, cv::Mat_<double>& predicted_shape);
 #endif

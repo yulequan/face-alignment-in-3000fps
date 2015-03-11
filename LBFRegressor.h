@@ -61,16 +61,18 @@ public:
                           const std::vector<struct model*>& models,
                           std::vector<cv::Mat_<double> >& current_shapes,
                           const std::vector<BoundingBox> & bounding_boxs,
-                          int num_train_sample,
                           int stages);
     
     void Train(const std::vector<cv::Mat_<uchar> >& images,
                const std::vector<cv::Mat_<double> >& ground_truth_shapes,
                const std::vector<BoundingBox> & bounding_boxs);
     
-    cv::Mat_<double> Predict(const cv::Mat_<uchar>& image,
-                             const BoundingBox& bounding_box,
-                             int initial_num);
+    std::vector<cv::Mat_<double> > Predict(const std::vector<cv::Mat_<uchar> >& images,
+                                           const std::vector<BoundingBox>& bounding_boxs,
+                                           int initial_num);
+    cv::Mat_<double>  Predict(const cv::Mat_<uchar>& image,
+                              const BoundingBox& bounding_box,
+                              int initial_num);
     void WriteGlobalParam(std::ofstream& fout);
     void ReadGlobalParam(std::ifstream& fin);
     void WriteRegressor(std::ofstream& fout);
