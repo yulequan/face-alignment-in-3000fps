@@ -39,7 +39,7 @@ void TestDemo (){
     int initial_number = 20;
 //    LoadCofwTestData(test_images, test_ground_truth_shapes, test_bounding_boxs);
  
-    LoadData(testdatapath, test_images, test_ground_truth_shapes, test_bounding_boxs);
+    LoadOpencvBbxData(testdatapath, test_images, test_ground_truth_shapes, test_bounding_boxs);
     LBFRegressor regressor;
     regressor.Load(modelPath+"model.txt");
     

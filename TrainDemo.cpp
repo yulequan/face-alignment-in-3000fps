@@ -39,8 +39,8 @@ void TrainDemo(){
     LBFRegressor regressor;
 
 //    LoadCofwTrainData(images, ground_truth_shapes, bounding_boxs);
-    LoadData(traindatapath1, images, ground_truth_shapes, bounding_boxs);
-    LoadData(traindatapath2, images, ground_truth_shapes, bounding_boxs);
+    LoadOpencvBbxData(traindatapath1, images, ground_truth_shapes, bounding_boxs);
+    LoadOpencvBbxData(traindatapath2, images, ground_truth_shapes, bounding_boxs);
     regressor.Train(images,ground_truth_shapes,bounding_boxs);
     regressor.Save(modelPath+"model.txt");
     return;

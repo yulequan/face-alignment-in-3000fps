@@ -2,20 +2,20 @@
 using namespace std;
 using namespace cv;
 
-void detectAndDraw( cv::Mat& img, cv::CascadeClassifier& cascade,
-                   cv::CascadeClassifier& nestedCascade, LBFRegressor& regressor,
+void detectAndDraw(Mat& img,
+                   CascadeClassifier& nestedCascade, LBFRegressor& regressor,
                    double scale, bool tryflip );
 
 int FaceDetectionAndAlignment(const char* inputname){
     
-    string cascadeName = "haarcascade_frontalface_alt.xml";
-    string nestedCascadeName = "haarcascade_eye_tree_eyeglasses.xml";
+    extern string cascadeName;
     string inputName;
     CvCapture* capture = 0;
     Mat frame, frameCopy, image;
     bool tryflip = false;
-    CascadeClassifier cascade, nestedCascade;
-    double scale = 1.3;
+    extern double scale ;
+    CascadeClassifier cascade;
+    
     if (inputname!=NULL){
         inputName.assign(inputname);
     }
@@ -24,16 +24,20 @@ int FaceDetectionAndAlignment(const char* inputname){
     if( inputName.empty() || (isdigit(inputName.c_str()[0]) && inputName.c_str()[1] == '\0') ){
         capture = cvCaptureFromCAM( inputName.empty() ? 0 : inputName.c_str()[0] - '0' );
         int c = inputName.empty() ? 0 : inputName.c_str()[0] - '0' ;
-        if(!capture) cout << "Capture from CAM " <<  c << " didn't work" << endl;
-        return -1;
+        if(!capture){
+            cout << "Capture from CAM " <<  c << " didn't work" << endl;
+            return -1;
+        }
     }
     // name is not empty
     else if( inputName.size() ){
         if (inputName.find(".jpg")!=string::npos||inputName.find(".png")!=string::npos
             ||inputName.find(".bmp")!=string::npos){
             image = imread( inputName, 1 );
-            if (image.empty()) cout << "Read Image fail" << endl;
-            return -1;
+            if (image.empty()){
+                cout << "Read Image fail" << endl;
+                return -1;
+            }
         }
         else if(inputName.find(".mp4")!=string::npos||inputName.find(".avi")!=string::npos
                 ||inputName.find(".wmv")!=string::npos){
@@ -66,7 +70,7 @@ int FaceDetectionAndAlignment(const char* inputname){
             else
                 flip( frame, frameCopy, 0 );
 
-            detectAndDraw( frameCopy, cascade, nestedCascade,regressor, scale, tryflip );
+            detectAndDraw( frameCopy, cascade,regressor, scale, tryflip );
 
             if( waitKey( 10 ) >= 0 )
                 goto _cleanup_;
@@ -81,7 +85,7 @@ _cleanup_:
        
         if( !image.empty() ){
             cout << "In image read" << endl;
-            detectAndDraw( image, cascade, nestedCascade,regressor,  scale, tryflip );
+            detectAndDraw( image, cascade,regressor,  scale, tryflip );
             waitKey(0);
         }
         else if( !inputName.empty() ){
@@ -99,7 +103,7 @@ _cleanup_:
                     cout << "file " << buf << endl;
                     image = imread( buf, 1 );    
                     if( !image.empty() ){
-                        detectAndDraw( image, cascade, nestedCascade,regressor,scale, tryflip );
+                        detectAndDraw(image, cascade,regressor,scale, tryflip );
                         c = waitKey(0);
                         if( c == 27 || c == 'q' || c == 'Q' )
                             break;
@@ -120,7 +124,7 @@ _cleanup_:
 
 
 void detectAndDraw( Mat& img, CascadeClassifier& cascade,
-                    CascadeClassifier& nestedCascade,LBFRegressor& regressor,
+                    LBFRegressor& regressor,
                     double scale, bool tryflip ){
     int i = 0;
     double t = 0;

@@ -101,6 +101,11 @@ void LoadData(std::string filepath,
               std::vector<cv::Mat_<uchar> >& images,
               std::vector<cv::Mat_<double> >& ground_truth_shapes,
               std::vector<BoundingBox> & bounding_box);
+void LoadOpencvBbxData(std::string filepath,
+                       std::vector<cv::Mat_<uchar> >& images,
+                       std::vector<cv::Mat_<double> >& ground_truth_shapes,
+                       std::vector<BoundingBox> & bounding_boxs
+                       );
 
 void TrainDemo();
 void TestDemo();

@@ -10,16 +10,20 @@ using namespace cv;
 // parameters
 Params global_params;
 string modelPath ="/Users/lequan/workspace/xcode/myopencv/model/";
+string cascadeName = "haarcascade_frontalface_alt.xml";
+double scale = 1.3;
 void InitializeGlobalParam();
 
 int main( int argc, const char** argv ){
+//    InitializeGlobalParam();
+//    TrainDemo();
     if (argc > 1 && strcmp(argv[1],"TrainDemo")==0){
         InitializeGlobalParam();
     }
     else {
         ReadGlobalParamFromFile(modelPath+"model.txt");
     }
-    
+//    FaceDetectionAndAlignment("/Users/lequan/workspace/xcode/myopencv/build/img/multipeople.jpg");
     // main process
     if (argc==1){
         return FaceDetectionAndAlignment("");
@@ -41,7 +45,7 @@ void InitializeGlobalParam(){
     global_params.max_numtrees = 10;
     global_params.max_depth = 5;
     global_params.landmark_num = 68;
-    global_params.initial_num = 1;
+    global_params.initial_num = 10;
     
     global_params.max_numstage = 7;
     double m_max_radio_radius[10] = {0.4,0.3,0.2,0.15, 0.12, 0.10, 0.08, 0.06, 0.06,0.05};

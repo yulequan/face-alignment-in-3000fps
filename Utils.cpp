@@ -148,7 +148,7 @@ double calculate_covariance(const vector<double>& v_1,
     v2 = v2 - mean_2;
     return mean(v1.mul(v2))[0]; 
 }
-Mat_<double> LoadGroundTruthShape(const char* filename){
+Mat_<double> LoadGroundTruthShape(string& filename){
     Mat_<double> shape(global_params.landmark_num,2);
     ifstream fin;
     string temp;
@@ -189,39 +189,137 @@ BoundingBox CalculateBoundingBox(Mat_<double>& shape){
     return bbx;
 }
 void LoadData(string filepath,
-              std::vector<cv::Mat_<uchar> >& images,
-              std::vector<cv::Mat_<double> >& ground_truth_shapes,
-              std::vector<BoundingBox> & bounding_boxs
+              vector<Mat_<uchar> >& images,
+              vector<Mat_<double> >& ground_truth_shapes,
+              vector<BoundingBox> & bounding_boxs
               ){
-    FILE* f = fopen( filepath.c_str(), "rt" );
-    if( f ){
-        char buf[1000+1];
-        while( fgets( buf, 1000, f ) ){
-            int len = (int)strlen(buf), c;
-            while( len > 0 && isspace(buf[len-1]) )
-                len--;
-            buf[len] = '\0';
-            cout << "file:" << buf <<endl;
+    ifstream fin;
+    fin.open(filepath);
+    string name;
+    while(getline(fin,name)){
+        name.erase(0, name.find_first_not_of(" \t"));
+        name.erase(name.find_last_not_of(" \t") + 1);
+        cout << "file:" << name <<endl;
+        
+        // Read Image
+        Mat_<uchar> image = imread(name,0);
+        images.push_back(image);
+        
+        // Read ground truth shapes
+        name.replace(name.find_last_of("."), 4,".pts");
+        Mat_<double> ground_truth_shape = LoadGroundTruthShape(name);
+        ground_truth_shapes.push_back(ground_truth_shape);
             
-            // Read Image
-            Mat_<uchar> image = imread(buf,0);
-            images.push_back(image);
-            
-            // Read ground truth shapes
-            while(buf[len]!='.'){
-                len--;
-            }
-            buf[len+1]='p';
-            buf[len+2]='t';
-            buf[len+3]='s';
-            buf[len+4]='\0';
-            Mat_<double> ground_truth_shape = LoadGroundTruthShape(buf);
-            ground_truth_shapes.push_back(ground_truth_shape);
-            
-            // Read Bounding box
-            BoundingBox bbx = CalculateBoundingBox(ground_truth_shape);
-            bounding_boxs.push_back(bbx);
-        }
-        fclose(f);
+        // Read Bounding box
+        BoundingBox bbx = CalculateBoundingBox(ground_truth_shape);
+        bounding_boxs.push_back(bbx);
     }
+    fin.close();
 }
+
+bool IsShapeInRect(Mat_<double>& shape, Rect& rect,double scale){
+    double sum1 = 0;
+    double sum2 = 0;
+    double max_x=0,min_x=10000,max_y=0,min_y=10000;
+    for (int i= 0;i < shape.rows;i++){
+        if (shape(i,0)>max_x) max_x = shape(i,0);
+        if (shape(i,0)<min_x) min_x = shape(i,0);
+        if (shape(i,1)>max_y) max_y = shape(i,1);
+        if (shape(i,1)<min_y) min_y = shape(i,1);
+        
+        sum1 += shape(i,0);
+        sum2 += shape(i,1);
+    }
+    if ((max_x-min_x)>rect.width*1.5){
+        return false;
+    }
+    if ((max_y-min_y)>rect.height*1.5){
+        return false;
+    }
+    
+    if (abs(sum1/shape.rows - (rect.x+rect.width/2.0)*scale) > rect.width*scale/2.0){
+        return false;
+    }
+    if (abs(sum2/shape.rows - (rect.y+rect.height/2.0)*scale) > rect.height*scale/2.0){
+        return false;
+    }
+    return true;
+}
+
+void LoadOpencvBbxData(string filepath,
+                       vector<Mat_<uchar> >& images,
+                       vector<Mat_<double> >& ground_truth_shapes,
+                       vector<BoundingBox> & bounding_boxs
+              ){
+    ifstream fin;
+    fin.open(filepath);
+
+    CascadeClassifier cascade;
+    extern double scale;
+    extern string cascadeName;
+    bool tryflip = false;
+    vector<Rect> faces;
+    Mat gray;
+    
+    // --Detection
+    cascade.load(cascadeName);
+    string name;
+    while(getline(fin,name)){
+        name.erase(0, name.find_first_not_of(" \t"));
+        name.erase(name.find_last_not_of(" \t") + 1);
+        cout << "file:" << name <<endl;
+        
+        // Read Image
+        Mat_<uchar> image = imread(name,0);
+        
+        
+        // Read ground truth shapes
+        name.replace(name.find_last_of("."), 4,".pts");
+        Mat_<double> ground_truth_shape = LoadGroundTruthShape(name);
+        
+        // Read OPencv Detection Bbx
+        Mat smallImg( cvRound (image.rows/scale), cvRound(image.cols/scale), CV_8UC1 );
+        resize( image, smallImg, smallImg.size(), 0, 0, INTER_LINEAR );
+        equalizeHist( smallImg, smallImg );
+        
+        // --Detection
+        cascade.detectMultiScale( smallImg, faces,
+                                 1.1, 2, 0
+                                 //|CV_HAAR_FIND_BIGGEST_OBJECT
+                                 //|CV_HAAR_DO_ROUGH_SEARCH
+                                 |CV_HAAR_SCALE_IMAGE
+                                 ,
+                                 Size(30, 30) );
+        for( vector<Rect>::const_iterator r = faces.begin(); r != faces.end(); r++){
+            Rect rect = *r;
+            if (IsShapeInRect(ground_truth_shape,rect,scale)){
+                Point center;
+                BoundingBox boundingbox;
+                
+                boundingbox.start_x = r->x*scale;
+                boundingbox.start_y = r->y*scale;
+                boundingbox.width   = (r->width-1)*scale;
+                boundingbox.height  = (r->height-1)*scale;
+                boundingbox.centroid_x = boundingbox.start_x + boundingbox.width/2.0;
+                boundingbox.centroid_y = boundingbox.start_y + boundingbox.height/2.0;
+                
+                // add train data
+                bounding_boxs.push_back(boundingbox);
+                images.push_back(image);
+                ground_truth_shapes.push_back(ground_truth_shape);
+                
+//                rectangle(image, cvPoint(boundingbox.start_x,boundingbox.start_y),
+//                          cvPoint(boundingbox.start_x+boundingbox.width,boundingbox.start_y+boundingbox.height),Scalar(0,255,0), 1, 8, 0);
+//                for (int i = 0;i<ground_truth_shape.rows;i++){
+//                    circle(image,Point2d(ground_truth_shape(i,0),ground_truth_shape(i,1)),1,Scalar(255,0,0),-1,8,0);
+//
+//                }
+//                imshow("BBX",image);
+//                cvWaitKey(0);
+                break;
+            }
+        }
+    }
+    fin.close();
+}
+
