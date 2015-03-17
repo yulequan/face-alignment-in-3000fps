@@ -14,11 +14,11 @@
 class Node {
 public:
     //data
-    int issplit;
+    bool issplit;
     int pnode;
     int depth;
     int cnodes[2];
-    int isleafnode;
+    bool isleafnode;
     double thresh;
     double feat[4];
     std::vector<int> ind_samples;
@@ -39,22 +39,12 @@ public:
         feat[3] = 0;
     }
     void Write(std::ofstream& fout){
-        fout.write((char*)&issplit, sizeof(int));
-        fout.write((char*)&pnode, sizeof(int));
-        fout.write((char*)&depth, sizeof(int));
-        fout.write((char*)cnodes, sizeof(int)*2);
-        fout.write((char*)&isleafnode, sizeof(int));
-        fout.write((char*)&thresh, sizeof(int));
-        fout.write((char*)feat, sizeof(double)*4);
+        fout << issplit<<" "<< pnode <<" "<<depth<<" " << cnodes[0]<<" "<<cnodes[1]<<" "<<isleafnode<<" "
+        << thresh<<" "<<feat[0]<<" "<<feat[1]<<" "<<feat[2]<<" "<<feat[3]<<std::endl;
     }
     void Read(std::ifstream& fin){
-        fin.read((char*)&issplit, sizeof(int));
-        fin.read((char*)&pnode, sizeof(int));
-        fin.read((char*)&depth, sizeof(int));
-        fin.read((char*)cnodes, sizeof(int)*2);
-        fin.read((char*)&isleafnode, sizeof(int));
-        fin.read((char*)&thresh, sizeof(int));
-        fin.read((char*)feat, sizeof(double)*4);
+        fin >> issplit >> pnode >> depth >> cnodes[0] >> cnodes[1] >> isleafnode
+        >> thresh >> feat[0] >> feat[1] >> feat[2] >> feat[3];
     }
 };
 
