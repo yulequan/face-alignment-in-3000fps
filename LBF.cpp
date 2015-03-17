@@ -20,11 +20,8 @@ int main( int argc, const char** argv ){
         InitializeGlobalParam();
     }
     else {
-        ReadGlobalParamFromFile(modelPath+"model.txt");
+        ReadGlobalParamFromFile(modelPath+"LBF.model");
     }
-//    LBFRegressor regressor;
-//    regressor.Load(modelPath+"model.txt");
-//    regressor.Save("/Users/lequan/workspace/xcode/myopencv/model/1.model");
     // main process
     if (argc==1){
         return FaceDetectionAndAlignment("");

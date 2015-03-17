@@ -1,0 +1,15 @@
+make clean
+rm CMakeCache.txt
+rm -R CMakeFiles/
+CC=gcc-4.9 CXX=g++-4.9  cmake .
+
+SET(CMAKE_C_COMPILER "gcc-4.9")
+SET(CMAKE_CXX_COMPILER "g++-4.9")
+
+FIND_PACKAGE( OpenMP REQUIRED)
+if(OPENMP_FOUND)
+message("OPENMP FOUND")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
+endif()
