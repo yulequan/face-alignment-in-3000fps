@@ -308,24 +308,22 @@ void Tree::Write(std:: ofstream& fout){
 
 }
 void Tree::Read(std::ifstream& fin){
-    fin >> landmarkID_;
-    fin >> max_depth_;
-    fin >> max_numnodes_;
-    fin >> num_leafnodes_;
-    fin >> num_nodes_;
-    fin >> max_numfeats_;
-    fin >> max_radio_radius_;
-    fin >> overlap_ration_;
-    
-    int num =0;
-    fin >> num;
+    fin.read((char*)&landmarkID_, sizeof(int));
+    fin.read((char*)&max_depth_, sizeof(int));
+    fin.read((char*)&max_numnodes_, sizeof(int));
+    fin.read((char*)&num_leafnodes_, sizeof(int));
+    fin.read((char*)&num_nodes_, sizeof(int));
+    fin.read((char*)&max_numfeats_, sizeof(int));
+    fin.read((char*)&max_radio_radius_, sizeof(double));
+    fin.read((char*)&overlap_ration_, sizeof(double));
+    int num;
+    fin.read((char*)&num, sizeof(int));
     id_leafnodes_.resize(num);
     for (int i=0;i<num;i++){
-        fin >> id_leafnodes_[i];
+        fin.read((char*)&id_leafnodes_[i], sizeof(int));
     }
     
     for (int i=0; i <max_numnodes_;i++){
         nodes_[i].Read(fin);
     }
 }
-

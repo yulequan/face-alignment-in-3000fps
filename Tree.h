@@ -48,8 +48,13 @@ public:
         fout.write((char*)feat, sizeof(double)*4);
     }
     void Read(std::ifstream& fin){
-        fin >> issplit >> pnode >> depth >> cnodes[0] >> cnodes[1] >> isleafnode
-        >> thresh >> feat[0] >> feat[1] >> feat[2] >> feat[3];
+        fin.read((char*)&issplit, sizeof(int));
+        fin.read((char*)&pnode, sizeof(int));
+        fin.read((char*)&depth, sizeof(int));
+        fin.read((char*)cnodes, sizeof(int)*2);
+        fin.read((char*)&isleafnode, sizeof(int));
+        fin.read((char*)&thresh, sizeof(int));
+        fin.read((char*)feat, sizeof(double)*4);
     }
 };
 

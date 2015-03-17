@@ -376,38 +376,29 @@ void  LBFRegressor::WriteRegressor(ofstream& fout){
     }
 }
 void  LBFRegressor::ReadGlobalParam(ifstream& fin){
-    fin >> global_params.bagging_overlap;
-    fin >> global_params.max_numtrees;
-    fin >> global_params.max_depth;
-    fin >> global_params.max_numthreshs;
-    fin >> global_params.landmark_num;
-    fin >> global_params.initial_num;
-    fin >> global_params.max_numstage;
-    
-    for (int i = 0; i< global_params.max_numstage; i++){
-        fin >> global_params.max_radio_radius[i];
-    }
-    
-    for (int i = 0; i < global_params.max_numstage; i++){
-        fin >> global_params.max_numfeats[i];
-    }
-}
+    fin.read((char*)&global_params.bagging_overlap, sizeof(double));
+    fin.read((char*)&global_params.max_numtrees, sizeof(int));
+    fin.read((char*)&global_params.max_depth, sizeof(int));
+    fin.read((char*)&global_params.max_numthreshs, sizeof(int));
+    fin.read((char*)&global_params.landmark_num, sizeof(int));
+    fin.read((char*)&global_params.initial_num, sizeof(int));
+    fin.read((char*)&global_params.max_numstage, sizeof(int));
+    fin.read((char*)global_params.max_radio_radius, sizeof(double)*global_params.max_numstage);
+    fin.read((char*)global_params.max_numfeats, sizeof(int)*global_params.max_numstage);}
 
 void LBFRegressor::ReadRegressor(ifstream& fin){
     mean_shape_ = Mat::zeros(global_params.landmark_num,2,CV_64FC1);
     for(int i = 0;i < global_params.landmark_num;i++){
-        fin >> mean_shape_(i,0) >> mean_shape_(i,1);
+        fin.read((char*)&mean_shape_(i,0), sizeof(double));
+        fin.read((char*)&mean_shape_(i,1), sizeof(double));
     }
-    ifstream fin_reg;
-    fin_reg.open(modelPath + "/Regressor.model",ios::binary);
     for (int i=0; i < global_params.max_numstage; i++ ){
         RandomForest_[i].Read(fin);
         int num =0;
-        fin >> num;
+        fin.read((char*)&num, sizeof(int));
         Models_[i].resize(num);
         for (int j=0;j<num;j++){
-            Models_[i][j]   = load_model_bin(fin_reg);
+            Models_[i][j]   = load_model_bin(fin);
         }
     }
-    fin_reg.close();
 }

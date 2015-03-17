@@ -41,7 +41,7 @@ double TestDemo (){
 //    LoadData(testdatapath, test_images, test_ground_truth_shapes, test_bounding_boxs);
     LoadOpencvBbxData(testdatapath, test_images, test_ground_truth_shapes, test_bounding_boxs);
     LBFRegressor regressor;
-    regressor.Load(modelPath+"LBF.model");
+    regressor.Load(modelPath+"1.model");
     vector<Mat_<double> > current_shape = regressor.Predict(test_images,test_bounding_boxs,initial_number);
     double MRSE_sum = 0;
     for (int i =0; i<current_shape.size();i++){

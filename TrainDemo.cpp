@@ -36,11 +36,13 @@ void TrainDemo(){
     vector<BoundingBox> bounding_boxs;
     string traindatapath1 = "/Users/lequan/Desktop/study/face/face-alignment-3000fps/Datasets/afw/Path_Images.txt";
     string traindatapath2 = "/Users/lequan/Desktop/study/face/face-alignment-3000fps/Datasets/lfpw_trainset/Path_Images.txt";
+    string traindatapath3 = "/Users/lequan/Desktop/study/face/face-alignment-3000fps/Datasets/helen_trainset/Path_Images.txt";
     LBFRegressor regressor;
 
 //    LoadCofwTrainData(images, ground_truth_shapes, bounding_boxs);
     LoadOpencvBbxData(traindatapath1, images, ground_truth_shapes, bounding_boxs);
     LoadOpencvBbxData(traindatapath2, images, ground_truth_shapes, bounding_boxs);
+    LoadOpencvBbxData(traindatapath3, images, ground_truth_shapes, bounding_boxs);
     regressor.Train(images,ground_truth_shapes,bounding_boxs);
     regressor.Save(modelPath+"LBF.model");
     return;
