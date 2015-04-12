@@ -66,10 +66,6 @@ liblinear/linear.h
 Tree.h
 /Users/lequan/workspace/LBF/src/Tree.h
 
-/Users/lequan/workspace/LBF/src/TestDemo.cpp
-LBFRegressor.h
-/Users/lequan/workspace/LBF/src/LBFRegressor.h
-
 /Users/lequan/workspace/LBF/src/Tree.h
 LBF.h
 /Users/lequan/workspace/LBF/src/LBF.h
