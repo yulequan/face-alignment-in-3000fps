@@ -13,7 +13,7 @@ int FaceDetectionAndAlignment(const char* inputname){
     CvCapture* capture = 0;
     Mat frame, frameCopy, image;
     bool tryflip = false;
-    extern double scale ;
+    double scale  = 1.3;
     CascadeClassifier cascade;
     
     if (inputname!=NULL){
@@ -48,7 +48,7 @@ int FaceDetectionAndAlignment(const char* inputname){
     }
     // -- 0. Load LBF model
     LBFRegressor regressor;
-    regressor.Load(modelPath+"model.txt");
+    regressor.Load(modelPath+"LBF.model");
     
     // -- 1. Load the cascades
     if( !cascade.load( cascadeName ) ){

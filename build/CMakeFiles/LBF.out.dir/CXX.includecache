@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp
+/Users/lequan/workspace/LBF/src/LBF.cpp
 LBF.h
-/Users/lequan/workspace/xcode/myopencv/src/LBF.h
+/Users/lequan/workspace/LBF/src/LBF.h
 LBFRegressor.h
-/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.h
+/Users/lequan/workspace/LBF/src/LBFRegressor.h
 
-/Users/lequan/workspace/xcode/myopencv/src/LBF.h
+/Users/lequan/workspace/LBF/src/LBF.h
 opencv2/objdetect/objdetect.hpp
-/Users/lequan/workspace/xcode/myopencv/src/opencv2/objdetect/objdetect.hpp
+/Users/lequan/workspace/LBF/src/opencv2/objdetect/objdetect.hpp
 opencv2/highgui/highgui.hpp
-/Users/lequan/workspace/xcode/myopencv/src/opencv2/highgui/highgui.hpp
+/Users/lequan/workspace/LBF/src/opencv2/highgui/highgui.hpp
 opencv2/imgproc/imgproc.hpp
-/Users/lequan/workspace/xcode/myopencv/src/opencv2/imgproc/imgproc.hpp
+/Users/lequan/workspace/LBF/src/opencv2/imgproc/imgproc.hpp
 cctype
 -
 iostream
@@ -36,7 +36,7 @@ cstdio
 cstdlib
 -
 cv.h
-/Users/lequan/workspace/xcode/myopencv/src/cv.h
+/Users/lequan/workspace/LBF/src/cv.h
 ctime
 -
 string
@@ -56,21 +56,25 @@ numeric
 utility
 -
 
-/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.h
+/Users/lequan/workspace/LBF/src/LBFRegressor.h
 RandomForest.h
-/Users/lequan/workspace/xcode/myopencv/src/RandomForest.h
+/Users/lequan/workspace/LBF/src/RandomForest.h
 liblinear/linear.h
-/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.h
+/Users/lequan/workspace/LBF/src/liblinear/linear.h
 
-/Users/lequan/workspace/xcode/myopencv/src/RandomForest.h
+/Users/lequan/workspace/LBF/src/RandomForest.h
 Tree.h
-/Users/lequan/workspace/xcode/myopencv/src/Tree.h
+/Users/lequan/workspace/LBF/src/Tree.h
 
-/Users/lequan/workspace/xcode/myopencv/src/Tree.h
+/Users/lequan/workspace/LBF/src/TestDemo.cpp
+LBFRegressor.h
+/Users/lequan/workspace/LBF/src/LBFRegressor.h
+
+/Users/lequan/workspace/LBF/src/Tree.h
 LBF.h
-/Users/lequan/workspace/xcode/myopencv/src/LBF.h
+/Users/lequan/workspace/LBF/src/LBF.h
 
-/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.h
+/Users/lequan/workspace/LBF/src/liblinear/linear.h
 iostream
 -
 fstream

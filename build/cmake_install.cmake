@@ -1,4 +1,4 @@
-# Install script for directory: /Users/lequan/workspace/xcode/myopencv/src/build
+# Install script for directory: /Users/lequan/workspace/LBF/src/build
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,7 +33,7 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "/Users/lequan/workspace/xcode/myopencv/src/build/${CMAKE_INSTALL_MANIFEST}" "")
+file(WRITE "/Users/lequan/workspace/LBF/src/build/${CMAKE_INSTALL_MANIFEST}" "")
 foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "/Users/lequan/workspace/xcode/myopencv/src/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  file(APPEND "/Users/lequan/workspace/LBF/src/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 endforeach()

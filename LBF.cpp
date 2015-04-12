@@ -1,5 +1,5 @@
 /**
- * @author 
+ * @author Lequan Yu
  * @version 2014/06/18
  */
 
@@ -10,41 +10,57 @@ using namespace cv;
 
 // parameters
 Params global_params;
-string modelPath ="/Users/lequan/workspace/xcode/myopencv/model/";
+
+
+string modelPath ="./../../model/";
+string dataPath = "/Users/lequan/Desktop/study/face/face-alignment-3000fps/Datasets/";
 string cascadeName = "haarcascade_frontalface_alt.xml";
-double scale = 1.3;
+
 void InitializeGlobalParam();
+void PrintHelp();
 
 int main( int argc, const char** argv ){
-    if (argc > 1 && strcmp(argv[1],"TrainDemo")==0){
+    
+    //initialize parameters
+    if (argc > 1 && strcmp(argv[1],"TrainModel")==0){
         InitializeGlobalParam();
     }
     else {
         ReadGlobalParamFromFile(modelPath+"LBF.model");
     }
+    
     // main process
     if (argc==1){
-        return FaceDetectionAndAlignment("");
+        PrintHelp();
     }
-    else if(strcmp(argv[1],"TrainDemo")==0){
+    else if(strcmp(argv[1],"TrainModel")==0){
         TrainDemo();
     }
-    else if (strcmp(argv[1], "TestDemo")==0){
+    else if (strcmp(argv[1], "TestModel")==0){
         double MRSE = TestDemo();
         cout << "Mean Root Square Error is "<< MRSE*100 <<"%"<<endl;
     }
-    else{
-        return FaceDetectionAndAlignment(argv[1]);
+    else if (strcmp(argv[1], "Demo")==0){
+        if (argc == 2){
+            return FaceDetectionAndAlignment("");
+        }
+        else if(argc ==3){
+            return FaceDetectionAndAlignment(argv[2]);
+        }
+    }
+    else {
+        PrintHelp();
     }
     return 0;
 }
 
+// set the parameters when training models.
 void InitializeGlobalParam(){
     global_params.bagging_overlap = 0.4;
     global_params.max_numtrees = 10;
     global_params.max_depth = 5;
     global_params.landmark_num = 68;
-    global_params.initial_num = 10;
+    global_params.initial_num = 5;
     
     global_params.max_numstage = 7;
     double m_max_radio_radius[10] = {0.4,0.3,0.2,0.15, 0.12, 0.10, 0.08, 0.06, 0.06,0.05};
@@ -77,6 +93,15 @@ void ReadGlobalParamFromFile(string path){
     for (int i = 0; i < global_params.max_numstage; i++){
         fin >> global_params.max_numfeats[i];
     }
-    cout << "End"<<endl;
+    cout << "Loading GlobalParam end"<<endl;
     fin.close();
+}
+void PrintHelp(){
+    cout << "Useage:"<<endl;
+    cout << "1. train your own model:    LBF.out  TrainModel "<<endl;
+    cout << "2. test model on dataset:   LBF.out  TestModel"<<endl;
+    cout << "3. test model via a camera: LBF.out  Demo "<<endl;
+    cout << "4. test model on a pic:     LBF.out  Demo xx.jpg"<<endl;
+    cout << "5. test model on pic set:   LBF.out  Demo Img_Path.txt"<<endl;
+    cout << endl;
 }

@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.0.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lequan/workspace/xcode/myopencv/src/build
+CMAKE_SOURCE_DIR = /Users/lequan/workspace/LBF/src/build
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lequan/workspace/xcode/myopencv/src/build
+CMAKE_BINARY_DIR = /Users/lequan/workspace/LBF/src/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -73,9 +73,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lequan/workspace/LBF/src/build/CMakeFiles /Users/lequan/workspace/LBF/src/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lequan/workspace/LBF/src/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -115,245 +115,245 @@ LBF.out/fast:
 	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/build
 .PHONY : LBF.out/fast
 
-Users/lequan/workspace/xcode/myopencv/src/LBF.o: Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/LBF.o
+Users/lequan/workspace/LBF/src/LBF.o: Users/lequan/workspace/LBF/src/LBF.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/LBF.o
 
 # target to build an object file
-Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o
+Users/lequan/workspace/LBF/src/LBF.cpp.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/LBF.cpp.o
 
-Users/lequan/workspace/xcode/myopencv/src/LBF.i: Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/LBF.i
+Users/lequan/workspace/LBF/src/LBF.i: Users/lequan/workspace/LBF/src/LBF.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/LBF.i
 
 # target to preprocess a source file
-Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.i:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.i
+Users/lequan/workspace/LBF/src/LBF.cpp.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/LBF.cpp.i
 
-Users/lequan/workspace/xcode/myopencv/src/LBF.s: Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/LBF.s
+Users/lequan/workspace/LBF/src/LBF.s: Users/lequan/workspace/LBF/src/LBF.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/LBF.s
 
 # target to generate assembly for a file
-Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.s:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.s
+Users/lequan/workspace/LBF/src/LBF.cpp.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/LBF.cpp.s
 
-Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.o: Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.o
+Users/lequan/workspace/LBF/src/LBFRegressor.o: Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/LBFRegressor.o
 
 # target to build an object file
-Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o
+Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o
 
-Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.i: Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.i
+Users/lequan/workspace/LBF/src/LBFRegressor.i: Users/lequan/workspace/LBF/src/LBFRegressor.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/LBFRegressor.i
 
 # target to preprocess a source file
-Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.i:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.i
+Users/lequan/workspace/LBF/src/LBFRegressor.cpp.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/LBFRegressor.cpp.i
 
-Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.s: Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.s
+Users/lequan/workspace/LBF/src/LBFRegressor.s: Users/lequan/workspace/LBF/src/LBFRegressor.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/LBFRegressor.s
 
 # target to generate assembly for a file
-Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.s:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.s
+Users/lequan/workspace/LBF/src/LBFRegressor.cpp.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/LBFRegressor.cpp.s
 
-Users/lequan/workspace/xcode/myopencv/src/RandomForest.o: Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/RandomForest.o
+Users/lequan/workspace/LBF/src/RandomForest.o: Users/lequan/workspace/LBF/src/RandomForest.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/RandomForest.o
 
 # target to build an object file
-Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o
+Users/lequan/workspace/LBF/src/RandomForest.cpp.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/RandomForest.cpp.o
 
-Users/lequan/workspace/xcode/myopencv/src/RandomForest.i: Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/RandomForest.i
+Users/lequan/workspace/LBF/src/RandomForest.i: Users/lequan/workspace/LBF/src/RandomForest.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/RandomForest.i
 
 # target to preprocess a source file
-Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.i:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.i
+Users/lequan/workspace/LBF/src/RandomForest.cpp.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/RandomForest.cpp.i
 
-Users/lequan/workspace/xcode/myopencv/src/RandomForest.s: Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/RandomForest.s
+Users/lequan/workspace/LBF/src/RandomForest.s: Users/lequan/workspace/LBF/src/RandomForest.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/RandomForest.s
 
 # target to generate assembly for a file
-Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.s:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.s
+Users/lequan/workspace/LBF/src/RandomForest.cpp.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/RandomForest.cpp.s
 
-Users/lequan/workspace/xcode/myopencv/src/TestDemo.o: Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/TestDemo.o
+Users/lequan/workspace/LBF/src/TestDemo.o: Users/lequan/workspace/LBF/src/TestDemo.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/TestDemo.o
 
 # target to build an object file
-Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o
+Users/lequan/workspace/LBF/src/TestDemo.cpp.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/TestDemo.cpp.o
 
-Users/lequan/workspace/xcode/myopencv/src/TestDemo.i: Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/TestDemo.i
+Users/lequan/workspace/LBF/src/TestDemo.i: Users/lequan/workspace/LBF/src/TestDemo.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/TestDemo.i
 
 # target to preprocess a source file
-Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.i:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.i
+Users/lequan/workspace/LBF/src/TestDemo.cpp.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/TestDemo.cpp.i
 
-Users/lequan/workspace/xcode/myopencv/src/TestDemo.s: Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/TestDemo.s
+Users/lequan/workspace/LBF/src/TestDemo.s: Users/lequan/workspace/LBF/src/TestDemo.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/TestDemo.s
 
 # target to generate assembly for a file
-Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.s:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.s
+Users/lequan/workspace/LBF/src/TestDemo.cpp.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/TestDemo.cpp.s
 
-Users/lequan/workspace/xcode/myopencv/src/TrainDemo.o: Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/TrainDemo.o
+Users/lequan/workspace/LBF/src/TrainDemo.o: Users/lequan/workspace/LBF/src/TrainDemo.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/TrainDemo.o
 
 # target to build an object file
-Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o
+Users/lequan/workspace/LBF/src/TrainDemo.cpp.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/TrainDemo.cpp.o
 
-Users/lequan/workspace/xcode/myopencv/src/TrainDemo.i: Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/TrainDemo.i
+Users/lequan/workspace/LBF/src/TrainDemo.i: Users/lequan/workspace/LBF/src/TrainDemo.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/TrainDemo.i
 
 # target to preprocess a source file
-Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.i:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.i
+Users/lequan/workspace/LBF/src/TrainDemo.cpp.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/TrainDemo.cpp.i
 
-Users/lequan/workspace/xcode/myopencv/src/TrainDemo.s: Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/TrainDemo.s
+Users/lequan/workspace/LBF/src/TrainDemo.s: Users/lequan/workspace/LBF/src/TrainDemo.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/TrainDemo.s
 
 # target to generate assembly for a file
-Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.s:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.s
+Users/lequan/workspace/LBF/src/TrainDemo.cpp.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/TrainDemo.cpp.s
 
-Users/lequan/workspace/xcode/myopencv/src/Tree.o: Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/Tree.o
+Users/lequan/workspace/LBF/src/Tree.o: Users/lequan/workspace/LBF/src/Tree.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/Tree.o
 
 # target to build an object file
-Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o
+Users/lequan/workspace/LBF/src/Tree.cpp.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/Tree.cpp.o
 
-Users/lequan/workspace/xcode/myopencv/src/Tree.i: Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/Tree.i
+Users/lequan/workspace/LBF/src/Tree.i: Users/lequan/workspace/LBF/src/Tree.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/Tree.i
 
 # target to preprocess a source file
-Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.i:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.i
+Users/lequan/workspace/LBF/src/Tree.cpp.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/Tree.cpp.i
 
-Users/lequan/workspace/xcode/myopencv/src/Tree.s: Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/Tree.s
+Users/lequan/workspace/LBF/src/Tree.s: Users/lequan/workspace/LBF/src/Tree.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/Tree.s
 
 # target to generate assembly for a file
-Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.s:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.s
+Users/lequan/workspace/LBF/src/Tree.cpp.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/Tree.cpp.s
 
-Users/lequan/workspace/xcode/myopencv/src/Utils.o: Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/Utils.o
+Users/lequan/workspace/LBF/src/Utils.o: Users/lequan/workspace/LBF/src/Utils.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/Utils.o
 
 # target to build an object file
-Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o
+Users/lequan/workspace/LBF/src/Utils.cpp.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/Utils.cpp.o
 
-Users/lequan/workspace/xcode/myopencv/src/Utils.i: Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/Utils.i
+Users/lequan/workspace/LBF/src/Utils.i: Users/lequan/workspace/LBF/src/Utils.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/Utils.i
 
 # target to preprocess a source file
-Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.i:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.i
+Users/lequan/workspace/LBF/src/Utils.cpp.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/Utils.cpp.i
 
-Users/lequan/workspace/xcode/myopencv/src/Utils.s: Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/Utils.s
+Users/lequan/workspace/LBF/src/Utils.s: Users/lequan/workspace/LBF/src/Utils.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/Utils.s
 
 # target to generate assembly for a file
-Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.s:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.s
+Users/lequan/workspace/LBF/src/Utils.cpp.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/Utils.cpp.s
 
-Users/lequan/workspace/xcode/myopencv/src/facedetect.o: Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/facedetect.o
+Users/lequan/workspace/LBF/src/facedetect.o: Users/lequan/workspace/LBF/src/facedetect.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/facedetect.o
 
 # target to build an object file
-Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o
+Users/lequan/workspace/LBF/src/facedetect.cpp.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/facedetect.cpp.o
 
-Users/lequan/workspace/xcode/myopencv/src/facedetect.i: Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/facedetect.i
+Users/lequan/workspace/LBF/src/facedetect.i: Users/lequan/workspace/LBF/src/facedetect.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/facedetect.i
 
 # target to preprocess a source file
-Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.i:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.i
+Users/lequan/workspace/LBF/src/facedetect.cpp.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/facedetect.cpp.i
 
-Users/lequan/workspace/xcode/myopencv/src/facedetect.s: Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/facedetect.s
+Users/lequan/workspace/LBF/src/facedetect.s: Users/lequan/workspace/LBF/src/facedetect.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/facedetect.s
 
 # target to generate assembly for a file
-Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.s:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.s
+Users/lequan/workspace/LBF/src/facedetect.cpp.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/facedetect.cpp.s
 
-Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.o: Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.o
+Users/lequan/workspace/LBF/src/liblinear/linear.o: Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/linear.o
 
 # target to build an object file
-Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o
+Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o
 
-Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.i: Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.i
+Users/lequan/workspace/LBF/src/liblinear/linear.i: Users/lequan/workspace/LBF/src/liblinear/linear.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/linear.i
 
 # target to preprocess a source file
-Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.i:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.i
+Users/lequan/workspace/LBF/src/liblinear/linear.cpp.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/linear.cpp.i
 
-Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.s: Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.s
+Users/lequan/workspace/LBF/src/liblinear/linear.s: Users/lequan/workspace/LBF/src/liblinear/linear.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/linear.s
 
 # target to generate assembly for a file
-Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.s:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.s
+Users/lequan/workspace/LBF/src/liblinear/linear.cpp.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/linear.cpp.s
 
-Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.o: Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.o
+Users/lequan/workspace/LBF/src/liblinear/tron.o: Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/tron.o
 
 # target to build an object file
-Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o
+Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o
 
-Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.i: Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.i
+Users/lequan/workspace/LBF/src/liblinear/tron.i: Users/lequan/workspace/LBF/src/liblinear/tron.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/tron.i
 
 # target to preprocess a source file
-Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.i:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.i
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.i
+Users/lequan/workspace/LBF/src/liblinear/tron.cpp.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.i
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/tron.cpp.i
 
-Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.s: Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.s
+Users/lequan/workspace/LBF/src/liblinear/tron.s: Users/lequan/workspace/LBF/src/liblinear/tron.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/tron.s
 
 # target to generate assembly for a file
-Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.s:
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.s
-.PHONY : Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.s
+Users/lequan/workspace/LBF/src/liblinear/tron.cpp.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.s
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/tron.cpp.s
 
 # Help Target
 help:
@@ -364,36 +364,36 @@ help:
 	@echo "... LBF.out"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/LBF.o"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/LBF.i"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/LBF.s"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.o"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.i"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.s"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/RandomForest.o"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/RandomForest.i"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/RandomForest.s"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/TestDemo.o"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/TestDemo.i"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/TestDemo.s"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/TrainDemo.o"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/TrainDemo.i"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/TrainDemo.s"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/Tree.o"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/Tree.i"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/Tree.s"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/Utils.o"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/Utils.i"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/Utils.s"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/facedetect.o"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/facedetect.i"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/facedetect.s"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.o"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.i"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.s"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.o"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.i"
-	@echo "... Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.s"
+	@echo "... Users/lequan/workspace/LBF/src/LBF.o"
+	@echo "... Users/lequan/workspace/LBF/src/LBF.i"
+	@echo "... Users/lequan/workspace/LBF/src/LBF.s"
+	@echo "... Users/lequan/workspace/LBF/src/LBFRegressor.o"
+	@echo "... Users/lequan/workspace/LBF/src/LBFRegressor.i"
+	@echo "... Users/lequan/workspace/LBF/src/LBFRegressor.s"
+	@echo "... Users/lequan/workspace/LBF/src/RandomForest.o"
+	@echo "... Users/lequan/workspace/LBF/src/RandomForest.i"
+	@echo "... Users/lequan/workspace/LBF/src/RandomForest.s"
+	@echo "... Users/lequan/workspace/LBF/src/TestDemo.o"
+	@echo "... Users/lequan/workspace/LBF/src/TestDemo.i"
+	@echo "... Users/lequan/workspace/LBF/src/TestDemo.s"
+	@echo "... Users/lequan/workspace/LBF/src/TrainDemo.o"
+	@echo "... Users/lequan/workspace/LBF/src/TrainDemo.i"
+	@echo "... Users/lequan/workspace/LBF/src/TrainDemo.s"
+	@echo "... Users/lequan/workspace/LBF/src/Tree.o"
+	@echo "... Users/lequan/workspace/LBF/src/Tree.i"
+	@echo "... Users/lequan/workspace/LBF/src/Tree.s"
+	@echo "... Users/lequan/workspace/LBF/src/Utils.o"
+	@echo "... Users/lequan/workspace/LBF/src/Utils.i"
+	@echo "... Users/lequan/workspace/LBF/src/Utils.s"
+	@echo "... Users/lequan/workspace/LBF/src/facedetect.o"
+	@echo "... Users/lequan/workspace/LBF/src/facedetect.i"
+	@echo "... Users/lequan/workspace/LBF/src/facedetect.s"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/linear.o"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/linear.i"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/linear.s"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/tron.o"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/tron.i"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/tron.s"
 .PHONY : help
 
 

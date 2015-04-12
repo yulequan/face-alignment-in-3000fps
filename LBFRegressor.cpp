@@ -16,17 +16,17 @@ struct feature_node ** LBFRegressor::DeriveBinaryFeat(
                                     const vector<Mat_<double> >& current_shapes,
                                     const vector<BoundingBox> & bounding_boxs,
                                     const Mat_<double>& mean_shape){
-    // calculate the overall dimension of binary feature, concatenate the
-    // features for all landmarks, and the feature of one landmark is sum
-    // leafnodes of all random trees;
-    int dims_binfeat = 0;
-    Mat_<int> ind_bincode(randf.num_landmark_,randf.max_numtrees_);
-    for ( int i =0;i < randf.num_landmark_;i++){
-        for (int j =0; j< randf.max_numtrees_; j++){
-            ind_bincode(i,j)= randf.rfs_[i][j].num_leafnodes_;
-            dims_binfeat = dims_binfeat + randf.rfs_[i][j].num_leafnodes_;
-        }
-    }
+//    // calculate the overall dimension of binary feature, concatenate the
+//    // features for all landmarks, and the feature of one landmark is sum
+//    // leafnodes of all random trees;
+//    int dims_binfeat = 0;
+//    Mat_<int> ind_bincode(randf.num_landmark_,randf.max_numtrees_);
+//    for ( int i =0;i < randf.num_landmark_;i++){
+//        for (int j =0; j< randf.max_numtrees_; j++){
+//            ind_bincode(i,j)= randf.rfs_[i][j].num_leafnodes_;
+//            dims_binfeat = dims_binfeat + randf.rfs_[i][j].num_leafnodes_;
+//        }
+//    }
     
     // initilaize the memory for binfeatures
     struct feature_node **binfeatures;
@@ -47,7 +47,6 @@ struct feature_node ** LBFRegressor::DeriveBinaryFeat(
         SimilarityTransform(ProjectShape(current_shapes[i],bounding_boxs[i]),mean_shape,rotation,scale);
         for (int j =0; j <randf.num_landmark_; j++){
             for(int k = 0; k< randf.max_numtrees_;k++){
-
                 bincode = GetCodefromTree(randf.rfs_[j][k],images[i],current_shapes[i],bounding_boxs[i],rotation,scale);
                 ind = j * randf.max_numtrees_ + k;
                 binfeatures[i][ind].index = leafnode_per_tree * ind + bincode;
@@ -299,7 +298,6 @@ vector<Mat_<double> > LBFRegressor::Predict(const vector<Mat_<uchar> >& images,
         Mat_<double> current_shape = ReProjectShape(mean_shape_, bounding_boxs[i]);
         current_shapes.push_back(current_shape);
     }
-  
     for ( int stage = 0; stage < global_params.max_numstage; stage++){
         struct feature_node ** binfeatures ;
         binfeatures = DeriveBinaryFeat(RandomForest_[stage],images,current_shapes,bounding_boxs, mean_shape_);

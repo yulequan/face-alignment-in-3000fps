@@ -35,10 +35,10 @@ RM = /usr/local/Cellar/cmake/3.0.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lequan/workspace/xcode/myopencv/src/build
+CMAKE_SOURCE_DIR = /Users/lequan/workspace/LBF/src/build
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lequan/workspace/xcode/myopencv/src/build
+CMAKE_BINARY_DIR = /Users/lequan/workspace/LBF/src/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/LBF.out.dir/depend.make
@@ -49,262 +49,262 @@ include CMakeFiles/LBF.out.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/LBF.out.dir/flags.make
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o: CMakeFiles/LBF.out.dir/flags.make
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o: /Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o -c /Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o: CMakeFiles/LBF.out.dir/flags.make
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o: /Users/lequan/workspace/LBF/src/liblinear/tron.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/LBF/src/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o -c /Users/lequan/workspace/LBF/src/liblinear/tron.cpp
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.i
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/LBF/src/liblinear/tron.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.i
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.s
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/LBF/src/liblinear/tron.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.s
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o.requires:
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o.requires
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o.requires:
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o.requires
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o.provides.build
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o.provides
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o.provides.build
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o.provides
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o: CMakeFiles/LBF.out.dir/flags.make
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o: /Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o -c /Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o: CMakeFiles/LBF.out.dir/flags.make
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o: /Users/lequan/workspace/LBF/src/liblinear/linear.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/LBF/src/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o -c /Users/lequan/workspace/LBF/src/liblinear/linear.cpp
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.i
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/LBF/src/liblinear/linear.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.i
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.s
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/LBF/src/liblinear/linear.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.s
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o.requires:
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o.requires
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o.requires:
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o.requires
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o.provides.build
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o.provides
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o.provides.build
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o.provides
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o: CMakeFiles/LBF.out.dir/flags.make
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o: /Users/lequan/workspace/xcode/myopencv/src/LBF.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o -c /Users/lequan/workspace/xcode/myopencv/src/LBF.cpp
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o: CMakeFiles/LBF.out.dir/flags.make
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o: /Users/lequan/workspace/LBF/src/LBF.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/LBF/src/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o -c /Users/lequan/workspace/LBF/src/LBF.cpp
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/xcode/myopencv/src/LBF.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.i
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/LBF/src/LBF.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.i
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/xcode/myopencv/src/LBF.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.s
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/LBF/src/LBF.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.s
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o.requires:
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o.requires
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o.requires:
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o.requires
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o.provides.build
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o.provides
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o.provides.build
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o.provides
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o: CMakeFiles/LBF.out.dir/flags.make
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o: /Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o -c /Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o: CMakeFiles/LBF.out.dir/flags.make
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o: /Users/lequan/workspace/LBF/src/TrainDemo.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/LBF/src/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o -c /Users/lequan/workspace/LBF/src/TrainDemo.cpp
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.i
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/LBF/src/TrainDemo.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.i
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.s
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/LBF/src/TrainDemo.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.s
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o.requires:
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o.requires
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o.requires:
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o.requires
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o.provides.build
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o.provides
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o.provides.build
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o.provides
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o: CMakeFiles/LBF.out.dir/flags.make
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o: /Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o -c /Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o: CMakeFiles/LBF.out.dir/flags.make
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o: /Users/lequan/workspace/LBF/src/TestDemo.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/LBF/src/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o -c /Users/lequan/workspace/LBF/src/TestDemo.cpp
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.i
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/LBF/src/TestDemo.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.i
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.s
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/LBF/src/TestDemo.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.s
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o.requires:
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o.requires
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o.requires:
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o.requires
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o.provides.build
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o.provides
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o.provides.build
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o.provides
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o: CMakeFiles/LBF.out.dir/flags.make
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o: /Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles $(CMAKE_PROGRESS_6)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o -c /Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o: CMakeFiles/LBF.out.dir/flags.make
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o: /Users/lequan/workspace/LBF/src/facedetect.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/LBF/src/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o -c /Users/lequan/workspace/LBF/src/facedetect.cpp
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.i
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/LBF/src/facedetect.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.i
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.s
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/LBF/src/facedetect.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.s
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o.requires:
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o.requires
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o.requires:
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o.requires
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o.provides.build
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o.provides
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o.provides.build
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o.provides
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o: CMakeFiles/LBF.out.dir/flags.make
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o: /Users/lequan/workspace/xcode/myopencv/src/Utils.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles $(CMAKE_PROGRESS_7)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o -c /Users/lequan/workspace/xcode/myopencv/src/Utils.cpp
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o: CMakeFiles/LBF.out.dir/flags.make
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o: /Users/lequan/workspace/LBF/src/Utils.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/LBF/src/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o -c /Users/lequan/workspace/LBF/src/Utils.cpp
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/xcode/myopencv/src/Utils.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.i
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/LBF/src/Utils.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.i
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/xcode/myopencv/src/Utils.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.s
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/LBF/src/Utils.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.s
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o.requires:
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o.requires
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o.requires:
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o.requires
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o.provides.build
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o.provides
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o.provides.build
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o.provides
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o: CMakeFiles/LBF.out.dir/flags.make
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o: /Users/lequan/workspace/xcode/myopencv/src/Tree.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles $(CMAKE_PROGRESS_8)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o -c /Users/lequan/workspace/xcode/myopencv/src/Tree.cpp
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o: CMakeFiles/LBF.out.dir/flags.make
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o: /Users/lequan/workspace/LBF/src/Tree.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/LBF/src/build/CMakeFiles $(CMAKE_PROGRESS_8)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o -c /Users/lequan/workspace/LBF/src/Tree.cpp
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/xcode/myopencv/src/Tree.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.i
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/LBF/src/Tree.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.i
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/xcode/myopencv/src/Tree.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.s
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/LBF/src/Tree.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.s
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o.requires:
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o.requires
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o.requires:
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o.requires
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o.provides.build
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o.provides
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o.provides.build
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o.provides
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o: CMakeFiles/LBF.out.dir/flags.make
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o: /Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles $(CMAKE_PROGRESS_9)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o -c /Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o: CMakeFiles/LBF.out.dir/flags.make
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o: /Users/lequan/workspace/LBF/src/RandomForest.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/LBF/src/build/CMakeFiles $(CMAKE_PROGRESS_9)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o -c /Users/lequan/workspace/LBF/src/RandomForest.cpp
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.i
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/LBF/src/RandomForest.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.i
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.s
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/LBF/src/RandomForest.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.s
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o.requires:
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o.requires
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o.requires:
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o.requires
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o.provides.build
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o.provides
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o.provides.build
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o.provides
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o: CMakeFiles/LBF.out.dir/flags.make
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o: /Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles $(CMAKE_PROGRESS_10)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o -c /Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o: CMakeFiles/LBF.out.dir/flags.make
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o: /Users/lequan/workspace/LBF/src/LBFRegressor.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/lequan/workspace/LBF/src/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o -c /Users/lequan/workspace/LBF/src/LBFRegressor.cpp
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.i
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/lequan/workspace/LBF/src/LBFRegressor.cpp > CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.i
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.s
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/lequan/workspace/LBF/src/LBFRegressor.cpp -o CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.s
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o.requires:
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o.requires
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o.requires:
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o.requires
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o.provides.build
-.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o.provides
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o.provides: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o.provides.build
+.PHONY : CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o.provides
 
-CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o
+CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o.provides.build: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o
 
 # Object files for target LBF.out
 LBF_out_OBJECTS = \
-"CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o" \
-"CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o" \
-"CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o" \
-"CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o" \
-"CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o" \
-"CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o" \
-"CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o" \
-"CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o" \
-"CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o" \
-"CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o"
+"CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o" \
+"CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o" \
+"CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o" \
+"CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o" \
+"CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o" \
+"CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o" \
+"CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o" \
+"CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o" \
+"CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o" \
+"CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o"
 
 # External object files for target LBF.out
 LBF_out_EXTERNAL_OBJECTS =
 
-LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o
-LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o
-LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o
-LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o
-LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o
-LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o
-LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o
-LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o
-LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o
-LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o
+LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o
+LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o
+LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o
+LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o
+LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o
+LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o
+LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o
+LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o
+LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o
+LBF.out: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o
 LBF.out: CMakeFiles/LBF.out.dir/build.make
 LBF.out: /usr/local/lib/libopencv_videostab.2.4.10.dylib
 LBF.out: /usr/local/lib/libopencv_video.2.4.10.dylib
@@ -347,16 +347,16 @@ LBF.out: CMakeFiles/LBF.out.dir/link.txt
 CMakeFiles/LBF.out.dir/build: LBF.out
 .PHONY : CMakeFiles/LBF.out.dir/build
 
-CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/tron.cpp.o.requires
-CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/liblinear/linear.cpp.o.requires
-CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBF.cpp.o.requires
-CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TrainDemo.cpp.o.requires
-CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/TestDemo.cpp.o.requires
-CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/facedetect.cpp.o.requires
-CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Utils.cpp.o.requires
-CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/Tree.cpp.o.requires
-CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/RandomForest.cpp.o.requires
-CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/xcode/myopencv/src/LBFRegressor.cpp.o.requires
+CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/tron.cpp.o.requires
+CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o.requires
+CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBF.cpp.o.requires
+CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TrainDemo.cpp.o.requires
+CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/TestDemo.cpp.o.requires
+CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.o.requires
+CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Utils.cpp.o.requires
+CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/Tree.cpp.o.requires
+CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/RandomForest.cpp.o.requires
+CMakeFiles/LBF.out.dir/requires: CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/LBFRegressor.cpp.o.requires
 .PHONY : CMakeFiles/LBF.out.dir/requires
 
 CMakeFiles/LBF.out.dir/clean:
@@ -364,6 +364,6 @@ CMakeFiles/LBF.out.dir/clean:
 .PHONY : CMakeFiles/LBF.out.dir/clean
 
 CMakeFiles/LBF.out.dir/depend:
-	cd /Users/lequan/workspace/xcode/myopencv/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lequan/workspace/xcode/myopencv/src/build /Users/lequan/workspace/xcode/myopencv/src/build /Users/lequan/workspace/xcode/myopencv/src/build /Users/lequan/workspace/xcode/myopencv/src/build /Users/lequan/workspace/xcode/myopencv/src/build/CMakeFiles/LBF.out.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/lequan/workspace/LBF/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lequan/workspace/LBF/src/build /Users/lequan/workspace/LBF/src/build /Users/lequan/workspace/LBF/src/build /Users/lequan/workspace/LBF/src/build /Users/lequan/workspace/LBF/src/build/CMakeFiles/LBF.out.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/LBF.out.dir/depend
 
