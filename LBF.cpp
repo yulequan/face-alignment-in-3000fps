@@ -1,7 +1,10 @@
-/**
- * @author Lequan Yu
- * @version 2014/06/18
- */
+//
+//  LBF.cpp
+//  myopencv
+//
+//  Created by lequan on 1/24/15.
+//  Copyright (c) 2015 lequan. All rights reserved.
+//
 
 #include "LBF.h"
 #include "LBFRegressor.h"
