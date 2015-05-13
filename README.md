@@ -19,7 +19,7 @@ This project is a C++ reimplementation of face alignment in 3000fps in the CVPR 
 5. To test a model on dataset: set test dataset in `TestDemo.cpp`. Use `"LBF.out TestModel"`.
 
 ###Model
-I have trained a model on AFW, HELEN,LFPW dataset. You can download it from [here](http://pan.baidu.com/s/1326PS). 
+I have trained a model on AFW, HELEN,LFPW dataset. You can download it from [here](http://pan.baidu.com/s/1326PS) or google drive(i have unload the model on the [google drive](https://drive.google.com/folderview?id=0ByeDfKY7bL0_fmg2RWN2V0xtQ19veW1wdFVJRjBaRHBuUmJNNERHc0YyQ2lLVXJodDZTbk0&usp=sharing)). 
 
 
 ### FAQ
