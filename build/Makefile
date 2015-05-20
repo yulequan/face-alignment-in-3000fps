@@ -307,6 +307,102 @@ Users/lequan/workspace/LBF/src/facedetect.cpp.s:
 	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/facedetect.cpp.s
 .PHONY : Users/lequan/workspace/LBF/src/facedetect.cpp.s
 
+Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.o: Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.c.o
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.o
+
+# target to build an object file
+Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.c.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.c.o
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.c.o
+
+Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.i: Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.c.i
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.i
+
+# target to preprocess a source file
+Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.c.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.c.i
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.c.i
+
+Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.s: Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.c.s
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.s
+
+# target to generate assembly for a file
+Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.c.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.c.s
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.c.s
+
+Users/lequan/workspace/LBF/src/liblinear/blas/ddot.o: Users/lequan/workspace/LBF/src/liblinear/blas/ddot.c.o
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/ddot.o
+
+# target to build an object file
+Users/lequan/workspace/LBF/src/liblinear/blas/ddot.c.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/blas/ddot.c.o
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/ddot.c.o
+
+Users/lequan/workspace/LBF/src/liblinear/blas/ddot.i: Users/lequan/workspace/LBF/src/liblinear/blas/ddot.c.i
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/ddot.i
+
+# target to preprocess a source file
+Users/lequan/workspace/LBF/src/liblinear/blas/ddot.c.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/blas/ddot.c.i
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/ddot.c.i
+
+Users/lequan/workspace/LBF/src/liblinear/blas/ddot.s: Users/lequan/workspace/LBF/src/liblinear/blas/ddot.c.s
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/ddot.s
+
+# target to generate assembly for a file
+Users/lequan/workspace/LBF/src/liblinear/blas/ddot.c.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/blas/ddot.c.s
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/ddot.c.s
+
+Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.o: Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.c.o
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.o
+
+# target to build an object file
+Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.c.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.c.o
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.c.o
+
+Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.i: Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.c.i
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.i
+
+# target to preprocess a source file
+Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.c.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.c.i
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.c.i
+
+Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.s: Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.c.s
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.s
+
+# target to generate assembly for a file
+Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.c.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.c.s
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.c.s
+
+Users/lequan/workspace/LBF/src/liblinear/blas/dscal.o: Users/lequan/workspace/LBF/src/liblinear/blas/dscal.c.o
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/dscal.o
+
+# target to build an object file
+Users/lequan/workspace/LBF/src/liblinear/blas/dscal.c.o:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/blas/dscal.c.o
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/dscal.c.o
+
+Users/lequan/workspace/LBF/src/liblinear/blas/dscal.i: Users/lequan/workspace/LBF/src/liblinear/blas/dscal.c.i
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/dscal.i
+
+# target to preprocess a source file
+Users/lequan/workspace/LBF/src/liblinear/blas/dscal.c.i:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/blas/dscal.c.i
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/dscal.c.i
+
+Users/lequan/workspace/LBF/src/liblinear/blas/dscal.s: Users/lequan/workspace/LBF/src/liblinear/blas/dscal.c.s
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/dscal.s
+
+# target to generate assembly for a file
+Users/lequan/workspace/LBF/src/liblinear/blas/dscal.c.s:
+	$(MAKE) -f CMakeFiles/LBF.out.dir/build.make CMakeFiles/LBF.out.dir/Users/lequan/workspace/LBF/src/liblinear/blas/dscal.c.s
+.PHONY : Users/lequan/workspace/LBF/src/liblinear/blas/dscal.c.s
+
 Users/lequan/workspace/LBF/src/liblinear/linear.o: Users/lequan/workspace/LBF/src/liblinear/linear.cpp.o
 .PHONY : Users/lequan/workspace/LBF/src/liblinear/linear.o
 
@@ -388,6 +484,18 @@ help:
 	@echo "... Users/lequan/workspace/LBF/src/facedetect.o"
 	@echo "... Users/lequan/workspace/LBF/src/facedetect.i"
 	@echo "... Users/lequan/workspace/LBF/src/facedetect.s"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.o"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.i"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/blas/daxpy.s"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/blas/ddot.o"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/blas/ddot.i"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/blas/ddot.s"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.o"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.i"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/blas/dnrm2.s"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/blas/dscal.o"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/blas/dscal.i"
+	@echo "... Users/lequan/workspace/LBF/src/liblinear/blas/dscal.s"
 	@echo "... Users/lequan/workspace/LBF/src/liblinear/linear.o"
 	@echo "... Users/lequan/workspace/LBF/src/liblinear/linear.i"
 	@echo "... Users/lequan/workspace/LBF/src/liblinear/linear.s"
