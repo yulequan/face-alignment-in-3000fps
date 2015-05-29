@@ -6,7 +6,7 @@ set(source ./../liblinear/blas/blas.h ./../liblinear/blas/blasp.h ./../liblinear
 ./../LBF.h ./../LBF.cpp ./../TrainModel.cpp ./../TestModel.cpp ./../FaceDetect.cpp ./../Utils.cpp ./../Tree.h ./../Tree.cpp ./../RandomForest.cpp ./../RandomForest.h ./../LBFRegressor.h ./../LBFRegressor.cpp)
 
 
-#if you don't want to use openMP, you should unmark this line
+#if you don't want to use openMP, you should comment this line
 FIND_PACKAGE( OpenMP REQUIRED)
 
 
