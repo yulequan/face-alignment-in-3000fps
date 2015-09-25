@@ -43,7 +43,7 @@ I have trained a model on AFW, HELEN,LFPW dataset. You can download it from [her
 
 ### Contact 
 If you have any question, you can create an `issue` on GitHub.
-Or you can email yulequan@zju.edu.cn
+Or you can email ylqzd2011@gmail.com
 
 ### Reference Project
 * [soundsilence/FaceAlignment](https://github.com/soundsilence/FaceAlignment)
