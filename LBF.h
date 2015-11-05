@@ -20,7 +20,7 @@
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
-#include "cv.h"
+#include <opencv/cv.h>
 #include <ctime>
 #include <string>
 #include <limits>
