@@ -3,7 +3,7 @@ find_package( OpenCV REQUIRED )
 
 set(source ./../liblinear/blas/blas.h ./../liblinear/blas/blasp.h ./../liblinear/blas/daxpy.c ./../liblinear/blas/ddot.c ./../liblinear/blas/dnrm2.c ./../liblinear/blas/dscal.c 
 ./../liblinear/tron.cpp ./../liblinear/tron.h ./../liblinear/linear.h ./../liblinear/linear.cpp  
-./../LBF.h ./../LBF.cpp ./../TrainModel.cpp ./../TestModel.cpp ./../FaceDetect.cpp ./../Utils.cpp ./../Tree.h ./../Tree.cpp ./../RandomForest.cpp ./../RandomForest.h ./../LBFRegressor.h ./../LBFRegressor.cpp)
+./../LBF.h ./../LBF.cpp ./../TrainModel.cpp ./../TestModel.cpp ./../Facedetect.cpp ./../Utils.cpp ./../Tree.h ./../Tree.cpp ./../RandomForest.cpp ./../RandomForest.h ./../LBFRegressor.h ./../LBFRegressor.cpp)
 
 
 #if you don't want to use openMP, you should comment this line
