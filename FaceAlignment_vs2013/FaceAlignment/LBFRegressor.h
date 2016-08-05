@@ -46,7 +46,7 @@ public:
                           const double scale);
     void GetCodefromRandomForest(struct feature_node *binfeature,
                                  const int index,
-                                 const cv::vector<Tree>& rand_forest,
+                                 const std::vector<Tree>& rand_forest,
                                  const cv::Mat_<uchar>& image,
                                  const cv::Mat_<double>& shape,
                                  const BoundingBox& bounding_box,

@@ -68,7 +68,7 @@ int FaceDetectionAndAlignment(const char* inputname){
         cout << "In capture ..." << endl;
         for(;;){
             IplImage* iplImg = cvQueryFrame( capture );
-            frame = iplImg;
+            frame = cvarrToMat(iplImg);
             if( frame.empty() )
                 break;
             if( iplImg->origin == IPL_ORIGIN_TL )

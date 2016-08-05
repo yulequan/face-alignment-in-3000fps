@@ -63,8 +63,8 @@ void LBFRegressor::GetCodefromRandomForest(struct feature_node *binfeature,
                                            const double scale){
     
     int leafnode_per_tree = pow(2,rand_forest[0].max_depth_-1);
-    double landmark_x = shape(rand_forest[0].landmarkID_,0);
-    double landmark_y = shape(rand_forest[0].landmarkID_,1);
+    int landmark_x = shape(rand_forest[0].landmarkID_,0);
+    int landmark_y = shape(rand_forest[0].landmarkID_,1);
 
     for (int iter = 0;iter<rand_forest.size();iter++){
         int currnode = 0;
@@ -88,8 +88,8 @@ void LBFRegressor::GetCodefromRandomForest(struct feature_node *binfeature,
             double project_y2 = rotation(1,0) * x2 + rotation(1,1) * y2;
             project_x2 = scale * project_x2 * bounding_box.width / 2.0;
             project_y2 = scale * project_y2 * bounding_box.height / 2.0;
-            int real_x2 = (int)(project_x2 + landmark_x);
-            int real_y2 = (int)(project_y2 + landmark_y);
+            int real_x2 = (int)project_x2 + landmark_x;
+            int real_y2 = (int)project_y2 + landmark_y;
             real_x2 = max(0,min(real_x2,image.cols-1));
             real_y2 = max(0,min(real_y2,image.rows-1));
             
@@ -176,7 +176,7 @@ void LBFRegressor::GlobalRegression(struct feature_node **binfeatures,
   //  param-> solver_type = L2R_L2LOSS_SVR;
     param->C = 1.0/num_train_sample;
     param->p = 0;
-    param->eps = 0.00001;
+    param->eps = 0.0001;
     //param->eps = 0.001;
     
     // initialize the y
